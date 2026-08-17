@@ -17,11 +17,11 @@
       --line: #e4e8eb;
       --soft: #f6f8fa;
       --paper: #ffffff;
-      --max-width: 1040px;
+      --max-width: 1520px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
     body {
       margin: 0;
       color: var(--ink);
@@ -39,126 +39,147 @@
     button { font: inherit; }
     ::selection { background: #dceefb; }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255, 255, 255, .94);
-      border-bottom: 1px solid rgba(228, 232, 235, .95);
-      backdrop-filter: blur(12px);
-    }
-
-    .nav {
-      width: min(calc(100% - 40px), var(--max-width));
-      height: 60px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .brand {
-      color: var(--ink);
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -.02em;
-    }
-    .brand:hover { color: var(--ink); text-decoration: none; }
-    .brand span { color: var(--accent); }
-
-    .nav-links { display: flex; align-items: center; gap: 25px; }
-    .nav-links a {
-      color: #4c555d;
-      font-size: 14px;
-      font-weight: 500;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); text-decoration: none; }
-
     main {
-      width: min(calc(100% - 40px), var(--max-width));
+      width: min(calc(100% - 32px), var(--max-width));
       margin: 0 auto;
-      padding: 56px 0 18px;
+      padding: 24px 0 18px;
+    }
+
+    .profile-shell {
+      padding-bottom: 31px;
+      border-bottom: 1px solid var(--line);
     }
 
     .profile {
       display: grid;
-      grid-template-columns: 230px minmax(0, 1fr);
-      gap: 43px;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 66px;
       align-items: start;
-      padding-bottom: 45px;
-      border-bottom: 1px solid var(--line);
     }
 
-    .portrait-column { text-align: center; }
+    .portrait-column { min-width: 0; }
     .portrait {
-      width: 210px;
+      width: 310px;
       aspect-ratio: 4 / 5;
-      margin: 0 auto 20px;
-      border-radius: 4px;
+      margin: 0 0 25px;
+      border-radius: 15px;
       object-fit: cover;
       object-position: center 22%;
-      box-shadow: 0 1px 4px rgba(31, 41, 51, .14);
+      box-shadow: 0 4px 17px rgba(31, 41, 51, .3);
       background: var(--soft);
     }
 
-    .quick-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 7px 15px;
-      font-size: 13px;
+    .contact-block {
+      display: grid;
+      gap: 2px;
+      margin: 0 0 24px 3px;
+      color: #15191d;
+      font-size: 18px;
+      line-height: 1.28;
     }
-    .quick-links a { white-space: nowrap; }
+    .contact-row {
+      display: grid;
+      grid-template-columns: 31px 1fr;
+      align-items: baseline;
+    }
+    .contact-icon {
+      color: #060708;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 800;
+      text-align: center;
+    }
+    .email-address { font-style: italic; }
+
+    .icon-links {
+      display: flex;
+      align-items: center;
+      margin-left: 1px;
+    }
+    .icon-links a {
+      display: grid;
+      place-items: center;
+      min-width: 48px;
+      height: 34px;
+      padding: 0 10px;
+      border-right: 1px solid #c7cdd2;
+      color: #2863b7;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .icon-links a:first-child { padding-left: 0; min-width: 38px; }
+    .icon-links a:last-child { border-right: 0; }
+    .icon-links a:hover { color: #174d9d; text-decoration: none; }
+    .icon-links .small-mark { font-size: 12px; letter-spacing: -.03em; }
 
     .profile-copy h1 {
-      margin: -7px 0 0;
+      margin: -7px 0 5px;
       color: #171a1d;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 5vw, 51px);
+      font-size: clamp(48px, 5vw, 64px);
       font-weight: 500;
       letter-spacing: -.035em;
       line-height: 1.12;
     }
     .name-cn {
-      display: inline-block;
-      margin-left: 10px;
+      display: block;
+      margin: 0 0 23px;
       color: #545c63;
       font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-      font-size: .55em;
+      font-size: 34px;
       font-weight: 400;
-      letter-spacing: .03em;
-      vertical-align: 8%;
+      letter-spacing: .04em;
     }
     .position {
-      margin: 13px 0 0;
-      color: #383f45;
-      font-size: 16px;
-      line-height: 1.52;
+      margin: 0 0 15px;
+      color: #24292e;
+      font-size: 22px;
+      font-weight: 650;
+      line-height: 1.45;
     }
-    .affiliation { margin: 2px 0 0; color: var(--muted); }
-    .contact-line { margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+    .affiliation {
+      margin: 1px 0;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.5;
+    }
 
-    .bio { margin-top: 25px; }
-    .bio p { margin: 0 0 12px; }
-    .bio strong { color: #20252a; }
-    .research-line {
-      padding: 12px 14px;
-      margin-top: 17px !important;
-      background: var(--soft);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 3px 3px 0;
+    .bio {
+      margin-top: 25px;
+      color: #111416;
+      font-size: 18px;
+      line-height: 1.42;
     }
+    .bio p { margin: 0 0 10px; }
+    .bio strong { color: #20252a; }
 
     .opening {
-      margin-top: 20px;
-      padding: 14px 16px;
-      border: 1px solid #dce8f1;
-      background: #f8fbfd;
-      border-radius: 4px;
-      font-size: 14px;
+      position: relative;
+      margin-top: 24px;
+      padding: 50px 29px 20px;
+      border: 0;
+      background: #fff9e9;
+      border-radius: 0 12px 12px 12px;
+      color: #201f1a;
+      font-size: 18px;
+      line-height: 1.42;
     }
-    .opening strong { color: var(--accent-dark); }
+    .opening-label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 6px 23px 7px;
+      border-radius: 0 0 5px 0;
+      background: #e5c363;
+      color: #4c4123;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .11em;
+    }
+    .opening p { margin: 0 0 7px; }
+    .opening p:last-child { margin-bottom: 0; color: #5e5130; }
+    .opening strong { color: #181711; }
 
     .section { padding: 42px 0 7px; }
     .section + .section { border-top: 1px solid var(--line); margin-top: 36px; }
@@ -338,18 +359,18 @@
     .back-top:hover { transform: translateY(-2px); }
 
     @media (max-width: 760px) {
-      html { scroll-padding-top: 64px; }
-      .nav { width: min(calc(100% - 28px), var(--max-width)); height: 54px; }
-      .brand { font-size: 17px; }
-      .nav-links { gap: 14px; }
-      .nav-links a { font-size: 13px; }
-      .nav-links a:nth-child(3) { display: none; }
-      main { width: min(calc(100% - 30px), var(--max-width)); padding-top: 35px; }
-      .profile { grid-template-columns: 1fr; gap: 29px; }
-      .portrait { width: 174px; }
-      .profile-copy h1 { text-align: center; font-size: 39px; }
-      .position, .affiliation, .contact-line { text-align: center; }
-      .bio { margin-top: 25px; }
+      main { width: min(calc(100% - 28px), var(--max-width)); padding-top: 20px; }
+      .profile { grid-template-columns: 1fr; gap: 25px; }
+      .portrait-column { display: grid; justify-items: center; }
+      .portrait { width: min(280px, 82vw); margin-bottom: 19px; }
+      .contact-block { font-size: 16px; }
+      .profile-copy h1 { text-align: center; font-size: 43px; }
+      .name-cn { text-align: center; font-size: 28px; margin-bottom: 18px; }
+      .position, .affiliation { text-align: center; }
+      .position { font-size: 18px; }
+      .affiliation { font-size: 17px; }
+      .bio { margin-top: 23px; font-size: 16px; line-height: 1.55; }
+      .opening { padding: 47px 18px 17px; font-size: 16px; }
       .section { padding-top: 34px; }
       .section + .section { margin-top: 29px; }
       .news-list li { grid-template-columns: 79px 1fr; gap: 11px; }
@@ -362,7 +383,6 @@
     }
 
     @media (max-width: 520px) {
-      .nav-links a:nth-child(2) { display: none; }
       .publication { grid-template-columns: 1fr; gap: 11px; }
       .pub-thumb { width: 100%; height: auto; aspect-ratio: 16 / 8.4; }
       .section-heading { font-size: 27px; }
@@ -378,42 +398,44 @@
 </head>
 
 <body>
-  <header class="topbar">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#home">Hao Liu<span>.</span></a>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#publications">Publications</a>
-        <a href="#about">About</a>
-      </div>
-    </nav>
-  </header>
-
   <main id="home">
-    <section class="profile" aria-labelledby="profile-name">
-      <div class="portrait-column">
-        <img class="portrait" src="https://hao-liu-china.github.io/images/LH.jpg" alt="Portrait of Hao Liu">
-        <div class="quick-links" aria-label="Profile links">
-          <a href="https://scholar.google.com/citations?hl=en&amp;user=CEEtEnoAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
-          <a href="https://github.com/hao-liu-china" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://faculty.ecnu.edu.cn/_s52/lh2_en/main.psp" target="_blank" rel="noopener">ECNU Profile</a>
+    <section class="profile-shell" aria-labelledby="profile-name">
+      <div class="profile">
+        <div class="portrait-column">
+          <img class="portrait" src="https://hao-liu-china.github.io/images/LH.jpg" alt="Portrait of Hao Liu">
+
+          <div class="contact-block" aria-label="Contact information">
+            <div class="contact-row"><i class="contact-icon" aria-hidden="true">▦</i><span>Room B501, Estuary and Coastal Building</span></div>
+            <div class="contact-row"><i class="contact-icon" aria-hidden="true">●</i><span>Minhang Campus, Shanghai 200241</span></div>
+            <div class="contact-row"><i class="contact-icon" aria-hidden="true">✉</i><span class="email-address">hliu at geoai.ecnu.edu.cn</span></div>
+          </div>
+
+          <div class="icon-links" aria-label="Academic and contact links">
+            <a href="https://scholar.google.com/citations?hl=en&amp;user=CEEtEnoAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">gˢ</a>
+            <a href="https://github.com/hao-liu-china" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">GH</a>
+            <a href="https://faculty.ecnu.edu.cn/_s52/lh2_en/main.psp" target="_blank" rel="noopener" aria-label="ECNU faculty profile" title="ECNU Profile"><span class="small-mark">ECNU</span></a>
+            <a href="mailto:hliu@geoai.ecnu.edu.cn" aria-label="Email Hao Liu" title="Email">✉</a>
+          </div>
+        </div>
+
+        <div class="profile-copy">
+          <h1 id="profile-name">Hao Liu</h1>
+          <span class="name-cn">刘浩</span>
+          <p class="position">Zijiang Young Scholar</p>
+          <p class="affiliation"><a href="https://geoai.ecnu.edu.cn/" target="_blank" rel="noopener">School of Geospatial Artificial Intelligence</a></p>
+          <p class="affiliation"><a href="https://www.ecnu.edu.cn/" target="_blank" rel="noopener">East China Normal University</a></p>
         </div>
       </div>
 
-      <div class="profile-copy">
-        <h1 id="profile-name">Hao Liu <span class="name-cn">刘浩</span></h1>
-        <p class="position">Zijiang Young Scholar · Principal Investigator · Ph.D. Supervisor</p>
-        <p class="affiliation"><a href="https://geoai.ecnu.edu.cn/" target="_blank" rel="noopener">School of Geospatial Artificial Intelligence</a>, East China Normal University</p>
-        <p class="contact-line">Shanghai, China · <a href="mailto:hliu@geoai.ecnu.edu.cn">hliu@geoai.ecnu.edu.cn</a></p>
+      <div class="bio">
+        <p>I am a Zijiang Young Scholar, Principal Investigator, and Ph.D. Supervisor at the <a href="https://geoai.ecnu.edu.cn/" target="_blank" rel="noopener">School of Geospatial Artificial Intelligence</a>, <a href="https://www.ecnu.edu.cn/" target="_blank" rel="noopener">East China Normal University (ECNU)</a>. My research interests lie in <strong>spatial intelligence, 3D vision, point cloud understanding, 3D object detection and tracking, scene understanding, and 3D reconstruction</strong>. The overarching goal of my research is to enable machines to perceive, understand, and reconstruct complex three-dimensional environments reliably.</p>
+        <p>Previously, I was a Postdoctoral Research Fellow at <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener">Nanyang Technological University</a>, working with <a href="https://personal.ntu.edu.sg/yhe/" target="_blank" rel="noopener">Prof. Ying He</a>. I received my Ph.D. from Sun Yat-sen University in 2023, supervised by <a href="https://www.yulanguo.cn/" target="_blank" rel="noopener">Prof. Yulan Guo</a>, my M.E. from the National University of Defense Technology in 2018, and my B.E. from the University of Electronic Science and Technology of China in 2016.</p>
+      </div>
 
-        <div class="bio">
-          <p>I am a Zijiang Young Scholar, Principal Investigator, and Ph.D. Supervisor at the School of Geospatial Artificial Intelligence, <a href="https://www.ecnu.edu.cn/" target="_blank" rel="noopener">East China Normal University (ECNU)</a>.</p>
-          <p>Before joining ECNU, I was a Postdoctoral Research Fellow at <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener">Nanyang Technological University</a>, working with <a href="https://personal.ntu.edu.sg/yhe/" target="_blank" rel="noopener">Prof. Ying He</a>. I received my Ph.D. from Sun Yat-sen University in 2023, supervised by <a href="https://www.yulanguo.cn/" target="_blank" rel="noopener">Prof. Yulan Guo</a>, my M.E. from the National University of Defense Technology in 2018, and my B.E. from the University of Electronic Science and Technology of China in 2016.</p>
-          <p class="research-line"><strong>Research interests:</strong> spatial intelligence, 3D vision, point cloud understanding, 3D object detection and tracking, scene understanding, and 3D reconstruction.</p>
-        </div>
-
-        <div class="opening"><strong>Openings.</strong> I am looking for self-motivated Ph.D./Master students and research interns interested in 3D vision and spatial intelligence. Please email me with your CV and transcripts.</div>
+      <div class="opening">
+        <span class="opening-label">OPENINGS</span>
+        <p><strong>Ph.D. / Master / RA</strong> — I am always looking for self-motivated students and research interns to work on 3D vision and spatial intelligence, covering topics such as point cloud understanding, 3D detection and tracking, scene understanding, and reconstruction.</p>
+        <p>Interested? Send me your resume and transcripts.</p>
       </div>
     </section>
 
