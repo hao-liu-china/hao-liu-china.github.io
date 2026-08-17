@@ -1,586 +1,646 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<style>
-		body{
-			color: #333;
-		}
-		#container{
-			min-width: 1000px;
-			width: 1000px;
-/*			overflow: auto;
-*/			margin: 50px auto;padding: 30px;
-			/*zoom: 1;*/
-*//*			border: 1px solid #ccc;background: #fc9;color: #fff;
-*/		}
-		#left{
-			float: left;
-			width: 400px;
-			height: 250px;
-			margin-left: 0px;
-		}
-		#right{
-			float: left;
-			width: auto;
-			margin-left: 30px;
-		}
-		#name{
-			font-size: 22.0pt;
-		    mso-bidi-font-size: 24.0pt;
-		    font-family: Times;
-		    mso-bidi-font-family: Times;
-		        font-weight: bold;
-		}
-		#info{
-		    font-size: 16.0pt;
-		    mso-bidi-font-size: 16.0pt;
-		    font-family: Times;
-		    mso-bidi-font-family: Times;
-		    margin-top: 30px;
-		    margin-left: 5px;
-		    margin-bottom: 10px;
-		    
-		}
-		.clear{clear:both; height: 0; line-height: 0; font-size: 0}
-		.Bio{
-			font-size:16.0pt;
-			mso-bidi-font-size:17.0pt;
-			line-height:150%;
-			font-family:Times;
-			mso-bidi-font-family:Lato-Regular;
-			text-align: justify;
-		}
-		span.SpellE {
-		    mso-style-name: "";
-		    mso-spl-e: yes;
-		}
-		span.Title{
-			    font-size: 22.0pt;
-			    mso-bidi-font-size: 17.0pt;
-			    font-family: Times;
-			    mso-bidi-font-family: Lato-Regular;
-			    font: bold;
-			    margin-top: 10px;
-			    width: 1000px;
-		}
-		div.section{
-			padding-top: 30px;
-		}
-		
-		div.sub-left{
-			float: left;
-			width: 250px;
-						
-		}
-		div.sub-left img{
-			vertical-align: middle;
-			horizontal-align: middle;
-			margin-top: 10px;
-		}
-		
-		div.sub-left span{
-			height: 100%;
-			display: inline-block;
-			vertical-align: top;
-						
-		}
-		div.sub-right{
-			float: left;
-			width: 750px;			
-		}
-		.paper{
-			overflow: auto;
-			zoom:1;
-			border-top: 2px ;
-			padding-bottom: 0px;
-			min-height: 160px;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hao Liu — Zijiang Young Scholar at East China Normal University. Research in 3D vision, point cloud understanding, object detection, tracking, and reconstruction.">
+  <meta name="author" content="Hao Liu">
+  <meta name="theme-color" content="#ffffff">
+  <title>Hao Liu | 刘浩</title>
+  <style>
+    :root {
+      --accent: #1772b4;
+      --accent-dark: #0f5d95;
+      --ink: #22272d;
+      --muted: #626b73;
+      --light: #8a9299;
+      --line: #e4e8eb;
+      --soft: #f6f8fa;
+      --paper: #ffffff;
+      --max-width: 1040px;
+    }
 
-		}
-		.paperTitle{
-			font-size:14pt;
-			mso-bidi-font-size:14pt;
-			font-family:Calibri;
-			mso-bidi-font-family:Calibri;
-			margin-top: 10px;
-			margin-bottom: 5px;
-			font-weight: bold;
-		}
-		.paperName{
-		    font-size: 12pt;
-		    mso-bidi-font-size: 12pt;		    
-		    font-family: Calibri;
-		    mso-bidi-font-family: Times;
-		    line-height:160%;
-		    font-style: italic;
-		}		
-		.paperPub{
-		    font-size: 14pt;
-		    mso-bidi-font-size: 14pt;		    
-		    font-family: Calibri;
-		    mso-bidi-font-family: Times;		    
-		    font-style: italic;
-		    line-height:160%;
-		}
-		.paperLink{
-		    font-size: 13.0pt;
-		    mso-bidi-font-size: 13.0pt;		    
-		    font-family: Calibri;
-		    mso-bidi-font-family: Times;
-		    line-height:170%;
-		}
-		.special{
-		    margin-top: 0in;
-		    margin-bottom: 0in;
-		    margin-left: -.9pt;
-		    margin-bottom: .0001pt;
-		    text-indent: .9pt;
-		    mso-pagination: none;
-		    tab-stops: 13.75in;
-		    mso-layout-grid-align: none;
-		    text-autospace: none;
-		}
-		.long div.sub-left, .long div.sub-right{
-			height: 300px;
-			width: 980px;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-		}
-		.short div.sub-left, .short div.sub-right{
-			height:150px;
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; }
+    ::selection { background: #dceefb; }
 
-		}
-		div.sub-left,div.sub-right{
-			height:200px;
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, .94);
+      border-bottom: 1px solid rgba(228, 232, 235, .95);
+      backdrop-filter: blur(12px);
+    }
 
-		}
-	</style>
+    .nav {
+      width: min(calc(100% - 40px), var(--max-width));
+      height: 60px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+    .brand:hover { color: var(--ink); text-decoration: none; }
+    .brand span { color: var(--accent); }
+
+    .nav-links { display: flex; align-items: center; gap: 25px; }
+    .nav-links a {
+      color: #4c555d;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); text-decoration: none; }
+
+    main {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      padding: 56px 0 18px;
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 43px;
+      align-items: start;
+      padding-bottom: 45px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .portrait-column { text-align: center; }
+    .portrait {
+      width: 210px;
+      aspect-ratio: 4 / 5;
+      margin: 0 auto 20px;
+      border-radius: 4px;
+      object-fit: cover;
+      object-position: center 22%;
+      box-shadow: 0 1px 4px rgba(31, 41, 51, .14);
+      background: var(--soft);
+    }
+
+    .quick-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px 15px;
+      font-size: 13px;
+    }
+    .quick-links a { white-space: nowrap; }
+
+    .profile-copy h1 {
+      margin: -7px 0 0;
+      color: #171a1d;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5vw, 51px);
+      font-weight: 500;
+      letter-spacing: -.035em;
+      line-height: 1.12;
+    }
+    .name-cn {
+      display: inline-block;
+      margin-left: 10px;
+      color: #545c63;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: .55em;
+      font-weight: 400;
+      letter-spacing: .03em;
+      vertical-align: 8%;
+    }
+    .position {
+      margin: 13px 0 0;
+      color: #383f45;
+      font-size: 16px;
+      line-height: 1.52;
+    }
+    .affiliation { margin: 2px 0 0; color: var(--muted); }
+    .contact-line { margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+
+    .bio { margin-top: 25px; }
+    .bio p { margin: 0 0 12px; }
+    .bio strong { color: #20252a; }
+    .research-line {
+      padding: 12px 14px;
+      margin-top: 17px !important;
+      background: var(--soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 3px 3px 0;
+    }
+
+    .opening {
+      margin-top: 20px;
+      padding: 14px 16px;
+      border: 1px solid #dce8f1;
+      background: #f8fbfd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .opening strong { color: var(--accent-dark); }
+
+    .section { padding: 42px 0 7px; }
+    .section + .section { border-top: 1px solid var(--line); margin-top: 36px; }
+    .section-heading {
+      margin: 0 0 23px;
+      color: #1b2025;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 29px;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      line-height: 1.2;
+    }
+
+    .news-list { list-style: none; margin: 0; padding: 0; }
+    .news-list li {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 16px;
+      padding: 6px 0;
+    }
+    .news-list time {
+      color: var(--light);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .news-list p { margin: 0; }
+    .news-old[hidden] { display: none; }
+
+    .text-toggle {
+      margin: 12px 0 0 108px;
+      padding: 0;
+      border: 0;
+      color: var(--accent);
+      background: transparent;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .text-toggle:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+    .year-block { margin-bottom: 31px; }
+    .year-title {
+      margin: 0 0 13px;
+      color: #3c444b;
+      font-size: 18px;
+      font-weight: 650;
+      letter-spacing: -.01em;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 218px minmax(0, 1fr);
+      gap: 22px;
+      padding: 15px 0 18px;
+    }
+    .publication + .publication { border-top: 1px solid #edf0f2; }
+
+    .pub-thumb {
+      width: 218px;
+      height: 128px;
+      overflow: hidden;
+      border: 1px solid #e1e5e8;
+      border-radius: 3px;
+      background: #f4f6f8;
+    }
+    .pub-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+    .pub-cover {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 28% 24%, rgba(73, 170, 222, .8), transparent 22%),
+        radial-gradient(circle at 75% 75%, rgba(41, 108, 154, .8), transparent 24%),
+        linear-gradient(135deg, #19324d, #0b6c9f 55%, #102c43);
+    }
+    .pub-cover::before, .pub-cover::after {
+      content: "";
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      transform: rotate(35deg);
+    }
+    .pub-cover::after { width: 120px; height: 120px; transform: rotate(65deg); }
+    .pub-cover span {
+      position: relative;
+      z-index: 1;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-align: center;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, .28);
+    }
+    .pub-cover.gold {
+      background:
+        radial-gradient(circle at 72% 28%, rgba(240, 193, 99, .65), transparent 26%),
+        linear-gradient(135deg, #30343b, #917039 58%, #2e363d);
+    }
+    .pub-cover.green {
+      background:
+        radial-gradient(circle at 28% 72%, rgba(92, 203, 164, .65), transparent 27%),
+        linear-gradient(135deg, #1e3440, #16817b 58%, #213d3c);
+    }
+
+    .pub-copy { align-self: center; min-width: 0; }
+    .pub-title {
+      margin: 0 0 5px;
+      color: #15191d;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17.5px;
+      font-weight: 600;
+      line-height: 1.38;
+    }
+    .pub-title a { color: inherit; }
+    .pub-title a:hover { color: var(--accent); }
+    .authors { margin: 0 0 4px; color: #4d555c; font-size: 14px; line-height: 1.45; }
+    .authors .me { font-weight: 700; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    .venue { margin: 0; color: #606970; font-size: 14px; }
+    .venue strong { color: #bd2e2e; font-weight: 650; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 7px; }
+    .pub-links a {
+      display: inline-block;
+      padding: 1px 7px 2px;
+      border: 1px solid #ccd8e0;
+      border-radius: 3px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .pub-links a:hover { background: #f1f7fb; text-decoration: none; }
+
+    .compact-publications { margin: 3px 0 0; padding-left: 22px; }
+    .compact-publications li { padding: 5px 0; }
+    .compact-publications .paper-name { color: #22272d; font-weight: 600; }
+    .compact-publications .paper-meta { color: var(--muted); }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 54px;
+    }
+    .plain-list { margin: 0; padding-left: 19px; }
+    .plain-list li { margin-bottom: 8px; }
+    .minor-heading { margin: 0 0 13px; font-size: 17px; }
+
+    footer {
+      margin-top: 48px;
+      padding: 26px 0 32px;
+      border-top: 1px solid var(--line);
+      color: var(--light);
+      font-size: 12.5px;
+      text-align: center;
+    }
+    footer p { margin: 2px 0; }
+
+    .back-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid #d9e0e5;
+      border-radius: 50%;
+      color: var(--accent);
+      background: rgba(255, 255, 255, .94);
+      box-shadow: 0 3px 12px rgba(32, 44, 55, .1);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s, transform .2s;
+    }
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+    .back-top:hover { transform: translateY(-2px); }
+
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 64px; }
+      .nav { width: min(calc(100% - 28px), var(--max-width)); height: 54px; }
+      .brand { font-size: 17px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 13px; }
+      .nav-links a:nth-child(3) { display: none; }
+      main { width: min(calc(100% - 30px), var(--max-width)); padding-top: 35px; }
+      .profile { grid-template-columns: 1fr; gap: 29px; }
+      .portrait { width: 174px; }
+      .profile-copy h1 { text-align: center; font-size: 39px; }
+      .position, .affiliation, .contact-line { text-align: center; }
+      .bio { margin-top: 25px; }
+      .section { padding-top: 34px; }
+      .section + .section { margin-top: 29px; }
+      .news-list li { grid-template-columns: 79px 1fr; gap: 11px; }
+      .text-toggle { margin-left: 90px; }
+      .publication { grid-template-columns: 142px minmax(0, 1fr); gap: 15px; }
+      .pub-thumb { width: 142px; height: 92px; }
+      .pub-title { font-size: 16px; }
+      .authors, .venue { font-size: 13px; }
+      .two-column { grid-template-columns: 1fr; gap: 27px; }
+    }
+
+    @media (max-width: 520px) {
+      .nav-links a:nth-child(2) { display: none; }
+      .publication { grid-template-columns: 1fr; gap: 11px; }
+      .pub-thumb { width: 100%; height: auto; aspect-ratio: 16 / 8.4; }
+      .section-heading { font-size: 27px; }
+      .news-list li { grid-template-columns: 1fr; gap: 0; padding: 8px 0; }
+      .text-toggle { margin-left: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
 </head>
+
 <body>
-	<div id="container">
-		<div id="left">
-			<img width="230" height="230" src="images/LH.jpg">
-		</div>
-		<div id="right">			
-			<div id="name">Hao Liu (刘浩) </div>
-			<div id="info">
-				Research Fellow<p>
-				Nanyang Technological University (NTU)<p>
-				Email: hao.liu@ntu.edu.sg<p>	
-			</div>
-				<a href="https://scholar.google.com/citations?hl=en&pli=1&user=CEEtEnoAAAAJ" target="_blank" rel="nofollow"><span>Google Scholar</span></a> 
-		</div>		
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home">Hao Liu<span>.</span></a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+  </header>
 
-			
-		<div class="clear"></div>
-		<div class="section">
-			<span class="Title"><b>Brief Bio</b></span><p>			
-				<div class="Bio">
-					I received the Ph.D. degree from Sun Yat-Sen University (SYSU) in 2023, supervised by <a href="https://www.yulanguo.cn/" target="_blank" rel="nofollow"><span>Prof. Yulan Guo</span></a> 
-					and the M.E. degree from National University of Defense Technology (NUDT) in 2018. 
-					Before that, I received the B.E. degree from University of Electronic Science and Technology of China (UESTC) in 2016.
-					Currently, I'm a research fellow, working with <a href="https://personal.ntu.edu.sg/yhe/" target="_blank" rel="nofollow"><span>Associate Prof. Ying He</span></a>, 
-					at the College of Computing and Data Science, Nanyang Technological University (NTU), Singapore.
-					My research interests focus on 3D deep learning, particularly on
-					<b style="mso-bidi-font-weight:normal">3D object detection, tracking and reconstruction</b>.</span></p>
-					<span style="color:red">In July 2025, I will join East China Normal University (ECNU) as a tenure-track young researcher (Zijiang Young Scholar).</span>
-				</div>
+  <main id="home">
+    <section class="profile" aria-labelledby="profile-name">
+      <div class="portrait-column">
+        <img class="portrait" src="https://hao-liu-china.github.io/images/LH.jpg" alt="Portrait of Hao Liu">
+        <div class="quick-links" aria-label="Profile links">
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=CEEtEnoAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://github.com/hao-liu-china" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://faculty.ecnu.edu.cn/_s52/lh2_en/main.psp" target="_blank" rel="noopener">ECNU Profile</a>
+        </div>
+      </div>
 
-	<div class="section">
-		<span class="Title"><b>News</b></span><p>
-		<hr style="BORDER-LEFT-STYLE: none; BORDER-TOP: gray 2px groove; HEIGHT: 0px; BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none">
-		<div class="paper long"><b>
-			<div class="sub-right">
-			<div class="paperName"><b>
-			2026.05 | Our paper on "Radial Scaling Voxelization for Accurate Small Object 3D Detection" is accepted to <span style="color:red">ICML 2026</span>.<br>
-			2026.01 | Our book on "Point Cloud Intelligence" is published. 
-			2025.11 | Our paper on "Edge-Centric Relational Reasoning for 3D Scene Graph Prediction" is accepted to <span style="color:red">AAAI 2026</span>.<br>
-			2025.10 | Our paper on "Enhanced Geometry and Semantics for Camera-Based 3D Semantic Scene Completion" is accpeted to <span style="color:red">IEEE TIP</span>.<br>
-			2025.01 | Our paper on "SF-City: A Source-Free Domain Adaptation Method for City-scale Point Cloud Semantic Segmentation" is accepted to <span style="color:red">IEEE TMM</span>.<br>
-			2024.12 | Our paper on "Semantic Scene Completion via Semantic-aware Guidance and Interactive Refinement Transformer" is accepted to <span style="color:red">IEEE TCSVT</span>.<br>
-			2024.07 | Our paper on "Point Cloud Completion via Self-projected View Augmentation and Implicit Field Constraint" is accepted to <span style="color:red">IEEE TCSVT</span>.<br>
-			2024.07 | Our paper on "Heterogeneous Graph Learning for Scene Graph Prediction in 3D Point Clouds" is accepted to <span style="color:red">ECCV 2024</span>.<br>
-			2023.12 | Our paper on "Self-Supervised Multi-Frame Monocular Depth Estimation for Dynamic Scenes" is accepted to <span style="color:red">IEEE TCSVT</span>.<br>
-			2023.05 | Our paper on "AnchorPoint: Query Design for Transformer-based 3D Object Detection and Tracking" is accepted to <span style="color:red">IEEE TITS</span>.<br>
-			2023.01 | Our paper on "CenterTube: Tracking Multiple 3D Objects with 4D Tubelets in Dynamic Point Clouds" is accepted to <span style="color:red">IEEE TMM</span>.<br>
-			2022.11 | Our paper on "DeepPCT: Single Object Tracking in Dynamic Point Cloud Sequences" is accepted to <span style="color:red">IEEE TIM</span>.<br>
-			2021.11 | Our paper on "Spatial-Temporal Transformer for 3D Point Cloud Sequences" is accepted to <span style="color:red">WACV 2022</span>.<br>
-			2021.07 | Our paper on "Detecting and Tracking Small and Dense Moving Objects in Satellite Videos: A Benchmark" is accepted to <span style="color:red">IEEE TGRS</span>.<br>
-			2020.07 | Our paper on "Semantic Context Encoding for Accurate 3D Point Cloud Segmentation" is accepted to <span style="color:red">IEEE TMM</span>.<br>
-			2020.06 | Our paper on "Deep Learning for 3D Point Clouds: A Survey" is accepted to <span style="color:red">IEEE TPAMI</span>.<br>
-			2020.03 | Our paper on "Robust Long-Term Tracking via Instance Specific Proposals" is accepted to <span style="color:red">IEEE TIM</span>.<br>
-			2019.11 | Our paper on "Global Context Reasoning for Semantic Segmentation of 3D Point Clouds" is accepted to <span style="color:red">WACV 2020</span>.<br>
-			2018.05 | Our paper on "Long-Term Object Tracking with Instance Specific Proposals" is accepted to <span style="color:red">ICPR 2018</span>.<br><br>
-			</b></div>
-			</b></div>
-		</b></div>
-	</div>
+      <div class="profile-copy">
+        <h1 id="profile-name">Hao Liu <span class="name-cn">刘浩</span></h1>
+        <p class="position">Zijiang Young Scholar · Principal Investigator · Ph.D. Supervisor</p>
+        <p class="affiliation"><a href="https://geoai.ecnu.edu.cn/" target="_blank" rel="noopener">School of Geospatial Artificial Intelligence</a>, East China Normal University</p>
+        <p class="contact-line">Shanghai, China · <a href="mailto:hliu@geoai.ecnu.edu.cn">hliu@geoai.ecnu.edu.cn</a></p>
 
-	<div class="clear"></div>
-	<div class="section">
-	<span class="Title"><b>Publications</b></span><p><p>
-	<hr style="BORDER-LEFT-STYLE: none; BORDER-TOP: gray 2px groove; HEIGHT: 0px; BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none">
+        <div class="bio">
+          <p>I am a Zijiang Young Scholar, Principal Investigator, and Ph.D. Supervisor at the School of Geospatial Artificial Intelligence, <a href="https://www.ecnu.edu.cn/" target="_blank" rel="noopener">East China Normal University (ECNU)</a>.</p>
+          <p>Before joining ECNU, I was a Postdoctoral Research Fellow at <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener">Nanyang Technological University</a>, working with <a href="https://personal.ntu.edu.sg/yhe/" target="_blank" rel="noopener">Prof. Ying He</a>. I received my Ph.D. from Sun Yat-sen University in 2023, supervised by <a href="https://www.yulanguo.cn/" target="_blank" rel="noopener">Prof. Yulan Guo</a>, my M.E. from the National University of Defense Technology in 2018, and my B.E. from the University of Electronic Science and Technology of China in 2016.</p>
+          <p class="research-line"><strong>Research interests:</strong> spatial intelligence, 3D vision, point cloud understanding, 3D object detection and tracking, scene understanding, and 3D reconstruction.</p>
+        </div>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Radial Scaling Voxelization for Accurate Small Object 3D Detection
-					</div>
-					<div class="paperName">
-						<b>Hao Liu</b>, Yi Zhou, Yanni Ma
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> ICML 2026 (CCF-A).</span><br> 
-					</div>
-				</div>
-			</div>
+        <div class="opening"><strong>Openings.</strong> I am looking for self-motivated Ph.D./Master students and research interns interested in 3D vision and spatial intelligence. Please email me with your CV and transcripts.</div>
+      </div>
+    </section>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Edge-Centric Relational Reasoning for 3D Scene Graph Prediction
-					</div>
-					<div class="paperName">
-						 Yanni Ma, <b>Hao Liu</b>, Yulan Guo, Theo Gevers, Martin R. Oswald
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> AAAI 2026 (CCF-A).</span><br> 
-					</div>
-				</div>
-			</div>
-		
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/GS3.PNG">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Point Cloud Unsupervised Pre-training via 3D Gaussian Splatting
-					</div>
-					<div class="paperName">
-						<b>Hao Liu</b>, Minglin Chen, Yanni Ma, Haihong Xiao, Ying He
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> Arxiv 2411.18667.</span><br> 
-					</div>
-				</div>
-			</div>
+    <section class="section" id="news" aria-labelledby="news-title">
+      <h2 class="section-heading" id="news-title">News</h2>
+      <ul class="news-list">
+        <li><time datetime="2026-05">May 2026</time><p>Our paper <em>Radial Scaling Voxelization for Accurate Small Object 3D Detection</em> was accepted to <strong>ICML 2026</strong>.</p></li>
+        <li><time datetime="2026-01">Jan 2026</time><p>Our monograph <em>Point Cloud Intelligence</em> was published.</p></li>
+        <li><time datetime="2025-11">Nov 2025</time><p>Our paper <em>Edge-Centric Relational Reasoning for 3D Scene Graph Prediction</em> was accepted to <strong>AAAI 2026</strong>.</p></li>
+        <li><time datetime="2025-10">Oct 2025</time><p>Our paper on geometry and semantics for camera-based 3D semantic scene completion was accepted to <strong>IEEE TIP</strong>.</p></li>
+        <li><time datetime="2025-07">Jul 2025</time><p>I joined East China Normal University as a Zijiang Young Scholar.</p></li>
+        <li><time datetime="2025-01">Jan 2025</time><p>Our paper <em>SF-City</em> was accepted to <strong>IEEE TMM</strong>.</p></li>
+        <li class="news-old" hidden><time datetime="2024-12">Dec 2024</time><p>Our semantic scene completion paper was accepted to <strong>IEEE TCSVT</strong>.</p></li>
+        <li class="news-old" hidden><time datetime="2024-07">Jul 2024</time><p>Two papers were accepted to <strong>ECCV 2024</strong> and <strong>IEEE TCSVT</strong>.</p></li>
+        <li class="news-old" hidden><time datetime="2023-12">Dec 2023</time><p>Our multi-frame monocular depth estimation paper was accepted to <strong>IEEE TCSVT</strong>.</p></li>
+        <li class="news-old" hidden><time datetime="2023-05">May 2023</time><p><em>AnchorPoint</em> was accepted to <strong>IEEE TITS</strong>.</p></li>
+        <li class="news-old" hidden><time datetime="2023-01">Jan 2023</time><p><em>CenterTube</em> was accepted to <strong>IEEE TMM</strong>.</p></li>
+      </ul>
+      <button class="text-toggle" id="news-toggle" type="button" aria-expanded="false">▽ SHOW MORE</button>
+    </section>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/3DVLP.PNG">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						3D Scene Graph Guided Vision-Language Pre-training
-					</div>
-					<div class="paperName">
-						<b>Hao Liu</b>, Yanni Ma, Yan Liu, Haihong Xiao, Ying He
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> Arxiv 2411.18666.</span><br> 
-					</div>
-				</div>
-			</div>
+    <section class="section" id="publications" aria-labelledby="publications-title">
+      <h2 class="section-heading" id="publications-title">Publications</h2>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						SF-City: A Source-Free Domain Adaptation Method for City-scale Point Cloud Semantic Segmentation
-					</div>
-					<div class="paperName">
-						Yan Liu, Hongyuan Zhu, Yingjie Lei, <b>Hao Liu</b>, Yun Pei, Yulan Guo
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on Multimedia (TMM, CCF-B), 2025.</span><br> 
-					</div>
-				</div>
-			</div>
-		
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Semantic Scene Completion via Semantic-aware Guidance and Interactive Refinement Transformer
-					</div>
-					<div class="paperName">
-						Haihong Xiao, Wenxiong Kang, <b>Hao Liu</b>, Yuqiong Li, Ying He
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on  Circuits and Systems for Video Technology (TCSVT, CCF-B), 2024.</span><br> 
-					</div>
-				</div>
-			</div>
-		
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Point Cloud Completion via Self-projected View Augmentation and Implicit Field Constraint
-					</div>
-					<div class="paperName">
-						Haihong Xiao, Ying He, <b>Hao Liu</b>, Wenxiong Kang, Yuqiong Li
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on  Circuits and Systems for Video Technology (TCSVT, CCF-B), 2024.</span><br> 
-					</div>
-				</div>
-			</div>
-		
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/ECCV24.PNG">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Heterogeneous Graph Learning for Scene Graph Prediction in 3D Point Clouds
-					</div>
-					<div class="paperName">
-						Yanni Ma, <b>Hao Liu</b>, Yun Pei, Yulan Guo
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> European Conference on Computer Vision (ECCV, CCF-B), 2024.</span><br> 
-					</div>
-				</div>
-			</div>
-		
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/CAT-Net_TCSVT.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Self-Supervised Multi-Frame Monocular Depth Estimation for Dynamic Scenes
-					</div>
-					<div class="paperName">
-						Guanghui Wu, <b>Hao Liu</b>, Longguang Wang, Kunhong Li, Yulan Guo, Zengping Chen
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on  Circuits and Systems for Video Technology (TCSVT, CCF-B), 2023.</span><br> 
-					</div>
-				</div>
-			</div>
+      <div class="year-block">
+        <h3 class="year-title">2026</h3>
 
-		
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/AnchorPoint_TITS.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						AnchorPoint: Query Design for Transformer-Based 3D Object Detection and Tracking
-					</div>
-					<div class="paperName">
-						<b>Hao Liu</b>, Yanni Ma, Hanyun Wang, Chaobo Zhang, Yulan Guo
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on Intelligent Transportation Systems (TITS, CCF-B), 2023.</span><br> 
-					</div>
-				</div>
-			</div>
+        <article class="publication">
+          <div class="pub-thumb"><div class="pub-cover"><span>RADIAL<br>VOXELIZATION</span></div></div>
+          <div class="pub-copy">
+            <h4 class="pub-title"><a href="https://openreview.net/forum?id=YwuZqvMQ7o" target="_blank" rel="noopener">Radial Scaling Voxelization for Accurate Small Object 3D Detection</a></h4>
+            <p class="authors"><span class="me">Hao Liu</span>, Yi Zhou, Yanni Ma</p>
+            <p class="venue">International Conference on Machine Learning, 2026. <strong>ICML 2026</strong></p>
+            <div class="pub-links"><a href="https://openreview.net/pdf/a0b02b8d08a30691ccc17eaca438598cee7a6817.pdf" target="_blank" rel="noopener">PDF</a><a href="https://openreview.net/forum?id=YwuZqvMQ7o" target="_blank" rel="noopener">OpenReview</a><a href="https://github.com/Zeoy2020/RadialScalingVoxelization" target="_blank" rel="noopener">Code</a></div>
+          </div>
+        </article>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/CenterTube_TMM.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						CenterTube: Tracking Multiple 3D Objects with 4D Tubelets in Dynamic Point Clouds
-					</div>
-					<div class="paperName">
-						<b>Hao Liu</b>, Yanni Ma, Qingyong Hu, Yulan Guo
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on Multimedia (TMM, CCF-B), 2023.</span><br> 
-					</div>
-				</div>
-			</div>
-		
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/DeepPCT_TIM.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						DeepPCT: Single Object Tracking in Dynamic Point Cloud Sequences
-					</div>
-					<div class="paperName">
-						<b>Hao Liu</b>, Qingyong Hu, Yanni Ma, Kai Xie, Yulan Guo
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on Instrumentation and Measurement (TIM), 72, 1-12, 2022.</span><br> 
-					</div>
-				</div>
-			</div>
+        <article class="publication">
+          <div class="pub-thumb"><img src="https://hao-liu-china.github.io/images/ECCV24.PNG" alt="Illustration for 3D scene graph prediction" loading="lazy"></div>
+          <div class="pub-copy">
+            <h4 class="pub-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/37728" target="_blank" rel="noopener">Edge-Centric Relational Reasoning for 3D Scene Graph Prediction</a></h4>
+            <p class="authors">Yanni Ma, <span class="me">Hao Liu</span>, Yulan Guo, Theo Gevers, Martin R. Oswald</p>
+            <p class="venue">AAAI Conference on Artificial Intelligence, 2026. <strong>AAAI 2026</strong></p>
+            <div class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/37728/41690" target="_blank" rel="noopener">PDF</a><a href="https://ojs.aaai.org/index.php/AAAI/article/view/37728" target="_blank" rel="noopener">Project</a></div>
+          </div>
+        </article>
+      </div>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/PST2_WACV.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Spatial-Temporal Transformer for 3D Point Cloud Sequences
-					</div>
-					<div class="paperName">
-						Yimin Wei, <b>Hao Liu</b>, Tingting Xie, Qiuhong Ke, Yulan Guo
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2022.</span><br> 
-					</div>
-				</div>
-			</div>
+      <div class="year-block">
+        <h3 class="year-title">2025</h3>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/Dataset_TGRS.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Detecting and Tracking Small and Dense Moving Objects in Satellite Videos: A Benchmark
-					</div>
-					<div class="paperName">
-						Qian Yin, Qingyong Hu, <b>Hao Liu</b>, Feng Zhang, Yingqian Wang, Zaiping Lin, Wei An, Yulan Guo
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on Geoscience and Remote Sensing (TGRS, CCF-B), 60, 1-18, 2021.</span><br> 
-					</div>
-				</div>
-			</div>
-		
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/PointCE_TMM.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Semantic Context Encoding for Accurate 3D Point Cloud Segmentation
-					</div>
-					<div class="paperName">
-						<b>Hao Liu</b>, Yulan Guo, Yanni Ma, Yinjie Lei, Gongjian Wen
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on Multimedia (TMM, CCF-B), 23, 2045-2055, 2020.</span><br> 
-					</div>
-				</div>
-			</div>
+        <article class="publication">
+          <div class="pub-thumb"><div class="pub-cover gold"><span>3D SEMANTIC<br>COMPLETION</span></div></div>
+          <div class="pub-copy">
+            <h4 class="pub-title">Enhanced Geometry and Semantics for Camera-Based 3D Semantic Scene Completion</h4>
+            <p class="authors">Haihong Xiao, Wenxiong Kang, <span class="me">Hao Liu</span>, Yuqiong Li, Ying He</p>
+            <p class="venue">IEEE Transactions on Image Processing, 2025. <strong>TIP</strong></p>
+          </div>
+        </article>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/Survey_TPAMI.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Deep Learning for 3D Point Clouds: A Survey
-					</div>
-					<div class="paperName">
-						Yulan Guo*, Hanyun Wang*, Qingyong Hu*, <b>Hao Liu*</b>, Li Liu, Mohammed Bennamoun
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI, CCF-A), 43(12), 
-4338-4364, 2020.</span><br> 
-					</div>
-				</div>
-			</div>
+        <article class="publication">
+          <div class="pub-thumb"><img src="https://hao-liu-china.github.io/images/GS3.PNG" alt="Illustration for point cloud pre-training via 3D Gaussian splatting" loading="lazy"></div>
+          <div class="pub-copy">
+            <h4 class="pub-title"><a href="https://arxiv.org/abs/2411.18667" target="_blank" rel="noopener">Point Cloud Unsupervised Pre-training via 3D Gaussian Splatting</a></h4>
+            <p class="authors"><span class="me">Hao Liu</span>, Minglin Chen, Yanni Ma, Haihong Xiao, Ying He</p>
+            <p class="venue">arXiv:2411.18667.</p>
+            <div class="pub-links"><a href="https://arxiv.org/pdf/2411.18667" target="_blank" rel="noopener">PDF</a><a href="https://arxiv.org/abs/2411.18667" target="_blank" rel="noopener">arXiv</a></div>
+          </div>
+        </article>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/CLIP_TIM.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Robust Long-Term Tracking via Instance Specific Proposals
-					</div>
-					<div class="paperName">
-						<b>Hao Liu</b>, Qingyong Hu, Biao Li, Yulan Guo
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE Transactions on Instrumentation and Measurement (TIM), 69(4), 950-962, 2019.</span><br> 
-					</div>
-				</div>
-			</div>
+        <article class="publication">
+          <div class="pub-thumb"><img src="https://hao-liu-china.github.io/images/3DVLP.PNG" alt="Illustration for 3D scene graph guided vision-language pre-training" loading="lazy"></div>
+          <div class="pub-copy">
+            <h4 class="pub-title"><a href="https://arxiv.org/abs/2411.18666" target="_blank" rel="noopener">3D Scene Graph Guided Vision-Language Pre-training</a></h4>
+            <p class="authors"><span class="me">Hao Liu</span>, Yanni Ma, Yan Liu, Haihong Xiao, Ying He</p>
+            <p class="venue">arXiv:2411.18666.</p>
+            <div class="pub-links"><a href="https://arxiv.org/pdf/2411.18666" target="_blank" rel="noopener">PDF</a><a href="https://arxiv.org/abs/2411.18666" target="_blank" rel="noopener">arXiv</a></div>
+          </div>
+        </article>
 
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/PointGCR_WACV.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Global Context Reasoning for Semantic Segmentation of 3D Point Clouds
-					</div>
-					<div class="paperName">
-						Yanni Ma, Yulan Guo, <b>Hao Liu</b>, Yinjie Lei, Gongjian Wen
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2020.</span><br> 
-					</div>
-				</div>
-			</div>
-		
-		<div class="paper short">
-				<div class="sub-left">
-					<span></span>
-					<img border="0" width="200" height="130" src="images/CLIP_ICPR.png">
-				</div>
-				<div class="sub-right">
-					<div class="paperTitle">
-						Long-Term Tracking with Instance Specific Proposals
-					</div>
-					<div class="paperName">
-						<b>Hao Liu</b>, Qingyong Hu, Biao Li, Yulan Guo
-					</div>
-					<div class="paperPub">
-						<span style="color:red"> 24th International Conference on Pattern Recognition (ICPR, CCF-C), 2018.</span><br> 
-					</div>
-				</div>
-			</div>
-		
+        <article class="publication">
+          <div class="pub-thumb"><div class="pub-cover green"><span>SF-CITY</span></div></div>
+          <div class="pub-copy">
+            <h4 class="pub-title">SF-City: A Source-Free Domain Adaptation Method for City-scale Point Cloud Semantic Segmentation</h4>
+            <p class="authors">Yan Liu, Hongyuan Zhu, Yingjie Lei, <span class="me">Hao Liu</span>, Yun Pei, Yulan Guo</p>
+            <p class="venue">IEEE Transactions on Multimedia, 2025. <strong>TMM</strong></p>
+          </div>
+        </article>
+      </div>
 
-					
-	<div class="section">
-		<span class="Title"><b>Awards & Honors</b></span><p>
-		<hr style="BORDER-LEFT-STYLE: none; BORDER-TOP: gray 2px groove; HEIGHT: 0px; BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none">
-		<div class="paperName"><b>
-			2023 | Excellent Graduate, Sun Yat-Sen University<br>
-			2023 | Donation Scholarship of Wang Shujun, Sun Yat-Sen University<br>
-			2022 | Outstanding Student Union Cadre, Sun Yat-Sen University<br>
-			2020 | National Scholarship, Ministry of Education, China<br>
-			2018 | The Thrid Prize in National Post-Graduate Mathematical Contest in Modeling, China<br>
-			2015 | Frist Class Scholarship, University of Electronic Science and Technology of China<br>
-			2014 | Frist Class Scholarship, University of Electronic Science and Technology of China<br>
-		</b></div>
-		</div>		
-		
+      <div class="year-block">
+        <h3 class="year-title">2024</h3>
 
-	</div>
-	
+        <article class="publication">
+          <div class="pub-thumb"><div class="pub-cover"><span>SEMANTIC-AWARE<br>GUIDANCE</span></div></div>
+          <div class="pub-copy">
+            <h4 class="pub-title">Semantic Scene Completion via Semantic-aware Guidance and Interactive Refinement Transformer</h4>
+            <p class="authors">Haihong Xiao, Wenxiong Kang, <span class="me">Hao Liu</span>, Yuqiong Li, Ying He</p>
+            <p class="venue">IEEE Transactions on Circuits and Systems for Video Technology, 2024. <strong>TCSVT</strong></p>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="pub-thumb"><div class="pub-cover gold"><span>POINT CLOUD<br>COMPLETION</span></div></div>
+          <div class="pub-copy">
+            <h4 class="pub-title">Point Cloud Completion via Self-projected View Augmentation and Implicit Field Constraint</h4>
+            <p class="authors">Haihong Xiao, Ying He, <span class="me">Hao Liu</span>, Wenxiong Kang, Yuqiong Li</p>
+            <p class="venue">IEEE Transactions on Circuits and Systems for Video Technology, 2024. <strong>TCSVT</strong></p>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="pub-thumb"><img src="https://hao-liu-china.github.io/images/ECCV24.PNG" alt="Illustration for heterogeneous graph learning" loading="lazy"></div>
+          <div class="pub-copy">
+            <h4 class="pub-title">Heterogeneous Graph Learning for Scene Graph Prediction in 3D Point Clouds</h4>
+            <p class="authors">Yanni Ma, <span class="me">Hao Liu</span>, Yun Pei, Yulan Guo</p>
+            <p class="venue">European Conference on Computer Vision, 2024. <strong>ECCV 2024</strong></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="year-block">
+        <h3 class="year-title">2023</h3>
+
+        <article class="publication">
+          <div class="pub-thumb"><div class="pub-cover green"><span>MONOCULAR<br>DEPTH</span></div></div>
+          <div class="pub-copy">
+            <h4 class="pub-title">Self-Supervised Multi-Frame Monocular Depth Estimation for Dynamic Scenes</h4>
+            <p class="authors">Guanghui Wu, <span class="me">Hao Liu</span>, Longguang Wang, Kunhong Li, Yulan Guo, Zengping Chen</p>
+            <p class="venue">IEEE Transactions on Circuits and Systems for Video Technology, 2023. <strong>TCSVT</strong></p>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="pub-thumb"><img src="https://hao-liu-china.github.io/images/AnchorPoint_TITS.png" alt="Illustration for AnchorPoint" loading="lazy"></div>
+          <div class="pub-copy">
+            <h4 class="pub-title">AnchorPoint: Query Design for Transformer-Based 3D Object Detection and Tracking</h4>
+            <p class="authors"><span class="me">Hao Liu</span>, Yanni Ma, Hanyun Wang, Chaobo Zhang, Yulan Guo</p>
+            <p class="venue">IEEE Transactions on Intelligent Transportation Systems, 2023. <strong>TITS</strong></p>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="pub-thumb"><div class="pub-cover gold"><span>CENTERTUBE</span></div></div>
+          <div class="pub-copy">
+            <h4 class="pub-title">CenterTube: Tracking Multiple 3D Objects with 4D Tubelets in Dynamic Point Clouds</h4>
+            <p class="authors"><span class="me">Hao Liu</span>, Yanni Ma, Qingyong Hu, Yulan Guo</p>
+            <p class="venue">IEEE Transactions on Multimedia, 2023. <strong>TMM</strong></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="year-block">
+        <h3 class="year-title">Earlier publications</h3>
+        <ol class="compact-publications">
+          <li><span class="paper-name">DeepPCT: Single Object Tracking in Dynamic Point Cloud Sequences.</span> <span class="paper-meta">IEEE TIM, 2022.</span></li>
+          <li><span class="paper-name">Spatial-Temporal Transformer for 3D Point Cloud Sequences.</span> <span class="paper-meta">WACV, 2022.</span></li>
+          <li><span class="paper-name">Detecting and Tracking Small and Dense Moving Objects in Satellite Videos: A Benchmark.</span> <span class="paper-meta">IEEE TGRS, 2021.</span></li>
+          <li><span class="paper-name">Semantic Context Encoding for Accurate 3D Point Cloud Segmentation.</span> <span class="paper-meta">IEEE TMM, 2020.</span></li>
+          <li><span class="paper-name">Deep Learning for 3D Point Clouds: A Survey.</span> <span class="paper-meta">IEEE TPAMI, 2020.</span></li>
+          <li><span class="paper-name">Robust Long-Term Tracking via Instance Specific Proposals.</span> <span class="paper-meta">IEEE TIM, 2019.</span></li>
+          <li><span class="paper-name">Global Context Reasoning for Semantic Segmentation of 3D Point Clouds.</span> <span class="paper-meta">WACV, 2020.</span></li>
+          <li><span class="paper-name">Long-Term Tracking with Instance Specific Proposals.</span> <span class="paper-meta">ICPR, 2018.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <h2 class="section-heading" id="about-title">About</h2>
+      <div class="two-column">
+        <div>
+          <h3 class="minor-heading">Appointments &amp; Education</h3>
+          <ul class="plain-list">
+            <li><strong>2025–present:</strong> Zijiang Young Scholar, ECNU</li>
+            <li><strong>2023–2025:</strong> Postdoctoral Research Fellow, NTU</li>
+            <li><strong>2023:</strong> Ph.D., Sun Yat-sen University</li>
+            <li><strong>2018:</strong> M.E., National University of Defense Technology</li>
+            <li><strong>2016:</strong> B.E., University of Electronic Science and Technology of China</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="minor-heading">Selected Honors</h3>
+          <ul class="plain-list">
+            <li>Excellent Graduate, Sun Yat-sen University, 2023</li>
+            <li>Wang Shujun Donation Scholarship, 2023</li>
+            <li>National Scholarship, Ministry of Education, China, 2020</li>
+            <li>Third Prize, National Post-Graduate Mathematical Contest in Modeling, 2018</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year">2026</span> Hao Liu. Last updated August 2026.</p>
+      <p>Design inspired by <a href="https://www.kaihan.org/" target="_blank" rel="noopener">Kai Han's academic homepage</a>.</p>
+    </footer>
+  </main>
+
+  <button class="back-top" id="back-top" type="button" aria-label="Back to top">↑</button>
+
+  <script>
+    const newsToggle = document.getElementById('news-toggle');
+    const olderNews = Array.from(document.querySelectorAll('.news-old'));
+    newsToggle.addEventListener('click', () => {
+      const expanded = newsToggle.getAttribute('aria-expanded') === 'true';
+      olderNews.forEach((item) => { item.hidden = expanded; });
+      newsToggle.setAttribute('aria-expanded', String(!expanded));
+      newsToggle.textContent = expanded ? '▽ SHOW MORE' : '△ SHOW LESS';
+    });
+
+    const backTop = document.getElementById('back-top');
+    const setBackTop = () => backTop.classList.toggle('visible', window.scrollY > 500);
+    window.addEventListener('scroll', setBackTop, { passive: true });
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    setBackTop();
+
+    const sections = Array.from(document.querySelectorAll('main section[id]'));
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    sections.forEach((section) => observer.observe(section));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
