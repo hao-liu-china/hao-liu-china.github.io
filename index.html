@@ -21,13 +21,13 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
     body {
       margin: 0;
       color: var(--ink);
       background: var(--paper);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.62;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -39,10 +39,46 @@
     button { font: inherit; }
     ::selection { background: #dceefb; }
 
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: min(calc(100% - 96px), var(--max-width));
+      margin: 24px auto 0;
+      background: #2f3e50;
+      box-shadow: 0 3px 8px rgba(28, 40, 54, .2);
+    }
+    .nav-links {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      list-style: none;
+      scrollbar-width: thin;
+    }
+    .nav-links a {
+      display: block;
+      padding: 15px 25px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.45;
+      white-space: nowrap;
+    }
+    .nav-links a:hover {
+      color: #fff;
+      background: #3b4d61;
+      text-decoration: none;
+    }
+    .nav-links a.active {
+      color: #fff;
+      background: #559bd2;
+    }
+
     main {
       width: min(calc(100% - 96px), var(--max-width));
       margin: 0 auto;
-      padding: 24px 0 18px;
+      padding: 46px 0 18px;
     }
 
     .profile-shell {
@@ -74,7 +110,7 @@
       gap: 1px;
       margin: 31px 0 22px 3px;
       color: #15191d;
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.25;
     }
     .contact-row {
@@ -104,14 +140,14 @@
       padding: 0 10px;
       border-right: 1px solid #c7cdd2;
       color: #2863b7;
-      font-size: 19px;
+      font-size: 21px;
       font-weight: 700;
       line-height: 1;
     }
     .icon-links a:first-child { padding-left: 0; min-width: 38px; }
     .icon-links a:last-child { border-right: 0; }
     .icon-links a:hover { color: #174d9d; text-decoration: none; }
-    .icon-links .small-mark { font-size: 12px; letter-spacing: -.03em; }
+    .icon-links .small-mark { font-size: 14px; letter-spacing: -.03em; }
 
     .profile-copy h1 {
       margin: -7px 0 5px;
@@ -134,21 +170,21 @@
     .position {
       margin: 0 0 15px;
       color: #24292e;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 650;
       line-height: 1.45;
     }
     .affiliation {
       margin: 1px 0;
       color: var(--muted);
-      font-size: 22px;
+      font-size: 24px;
       line-height: 1.5;
     }
 
     .bio {
       margin-top: 25px;
       color: #111416;
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.42;
     }
     .bio p { margin: 0 0 10px; }
@@ -162,7 +198,7 @@
       background: #fff9e9;
       border-radius: 0 12px 12px 12px;
       color: #201f1a;
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.42;
     }
     .opening-label {
@@ -173,7 +209,7 @@
       border-radius: 0 0 5px 0;
       background: #e5c363;
       color: #4c4123;
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 800;
       letter-spacing: .11em;
     }
@@ -187,7 +223,7 @@
       margin: 0 0 23px;
       color: #1b2025;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 36px;
+      font-size: 38px;
       font-weight: 500;
       letter-spacing: -.025em;
       line-height: 1.2;
@@ -199,7 +235,7 @@
       grid-template-columns: 118px 1fr;
       gap: 20px;
       padding: 7px 0;
-      font-size: 18px;
+      font-size: 20px;
     }
     .news-list time {
       color: var(--light);
@@ -216,7 +252,7 @@
       color: var(--accent);
       background: transparent;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
     }
     .text-toggle:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
@@ -225,7 +261,7 @@
     .year-title {
       margin: 0 0 13px;
       color: #3c444b;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 650;
       letter-spacing: -.01em;
     }
@@ -273,7 +309,7 @@
     .pub-cover span {
       position: relative;
       z-index: 1;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: .08em;
       text-align: center;
@@ -295,15 +331,15 @@
       margin: 0 0 5px;
       color: #15191d;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 23px;
+      font-size: 25px;
       font-weight: 600;
       line-height: 1.38;
     }
     .pub-title a { color: inherit; }
     .pub-title a:hover { color: var(--accent); }
-    .authors { margin: 0 0 4px; color: #30363b; font-size: 18px; line-height: 1.45; }
+    .authors { margin: 0 0 4px; color: #30363b; font-size: 20px; line-height: 1.45; }
     .authors .me { font-weight: 700; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
-    .venue { margin: 0; color: #343b41; font-size: 18px; }
+    .venue { margin: 0; color: #343b41; font-size: 20px; }
     .venue strong { color: #bd2e2e; font-weight: 650; }
     .pub-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 11px; }
     .pub-links a {
@@ -313,7 +349,7 @@
       border-radius: 20px;
       color: #17385a;
       background: #fbfcfd;
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.35;
     }
     .pub-links a:hover { background: #f1f7fb; text-decoration: none; }
@@ -323,14 +359,14 @@
     .link-code::before { content: "⌘"; }
     .link-web::before { content: "●"; }
 
-    .compact-publications { margin: 3px 0 0; padding-left: 25px; font-size: 18px; }
+    .compact-publications { margin: 3px 0 0; padding-left: 25px; font-size: 20px; }
     .compact-publications li { padding: 7px 0; }
     .compact-publications .paper-name { color: #22272d; font-weight: 600; }
     .compact-publications .paper-meta { color: var(--muted); }
     .compact-publications .pub-links { margin-top: 6px; }
     .compact-publications .pub-links a {
       padding: 3px 11px 4px;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .two-column {
@@ -338,16 +374,16 @@
       grid-template-columns: 1fr 1fr;
       gap: 54px;
     }
-    .plain-list { margin: 0; padding-left: 22px; font-size: 18px; }
+    .plain-list { margin: 0; padding-left: 22px; font-size: 20px; }
     .plain-list li { margin-bottom: 8px; }
-    .minor-heading { margin: 0 0 13px; font-size: 22px; }
+    .minor-heading { margin: 0 0 13px; font-size: 24px; }
 
     footer {
       margin-top: 48px;
       padding: 26px 0 32px;
       border-top: 1px solid var(--line);
       color: var(--light);
-      font-size: 12.5px;
+      font-size: 14.5px;
       text-align: center;
     }
     footer p { margin: 2px 0; }
@@ -372,34 +408,37 @@
     .back-top:hover { transform: translateY(-2px); }
 
     @media (max-width: 760px) {
-      main { width: min(calc(100% - 28px), var(--max-width)); padding-top: 20px; }
+      html { scroll-padding-top: 70px; }
+      .site-nav { width: min(calc(100% - 28px), var(--max-width)); margin-top: 14px; }
+      .nav-links a { padding: 12px 16px; font-size: 17px; }
+      main { width: min(calc(100% - 28px), var(--max-width)); padding-top: 28px; }
       .profile { grid-template-columns: 1fr; gap: 25px; }
       .portrait-column { display: grid; justify-items: center; }
       .portrait { width: min(280px, 82vw); margin-bottom: 0; }
-      .contact-block { font-size: 16px; }
+      .contact-block { font-size: 18px; }
       .profile-copy h1 { text-align: center; font-size: 43px; }
       .name-cn { text-align: center; font-size: 28px; margin-bottom: 18px; }
       .position, .affiliation { text-align: center; }
-      .position { font-size: 18px; }
-      .affiliation { font-size: 17px; }
-      .bio { margin-top: 23px; font-size: 16px; line-height: 1.55; }
-      .opening { padding: 47px 18px 17px; font-size: 16px; }
+      .position { font-size: 20px; }
+      .affiliation { font-size: 19px; }
+      .bio { margin-top: 23px; font-size: 18px; line-height: 1.55; }
+      .opening { padding: 47px 18px 17px; font-size: 18px; }
       .section { padding-top: 34px; }
       .section + .section { margin-top: 29px; }
       .news-list li { grid-template-columns: 79px 1fr; gap: 11px; }
       .text-toggle { margin-left: 90px; }
       .publication { grid-template-columns: 142px minmax(0, 1fr); gap: 15px; }
       .pub-thumb { width: 142px; height: 92px; }
-      .pub-title { font-size: 18px; }
-      .authors, .venue { font-size: 15px; }
-      .pub-links a { font-size: 14px; }
+      .pub-title { font-size: 20px; }
+      .authors, .venue { font-size: 17px; }
+      .pub-links a { font-size: 16px; }
       .two-column { grid-template-columns: 1fr; gap: 27px; }
     }
 
     @media (max-width: 520px) {
       .publication { grid-template-columns: 1fr; gap: 11px; }
       .pub-thumb { width: 100%; height: auto; aspect-ratio: 16 / 8.4; }
-      .section-heading { font-size: 27px; }
+      .section-heading { font-size: 29px; }
       .news-list li { grid-template-columns: 1fr; gap: 0; padding: 8px 0; }
       .text-toggle { margin-left: 0; }
     }
@@ -412,8 +451,18 @@
 </head>
 
 <body>
+  <nav class="site-nav" aria-label="Page navigation">
+    <ul class="nav-links">
+      <li><a class="active" href="#home" aria-current="page">Home</a></li>
+      <li><a href="#biography">Biography</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
   <main id="home">
-    <section class="profile-shell" aria-labelledby="profile-name">
+    <section class="profile-shell" id="biography" aria-labelledby="profile-name">
       <div class="profile">
         <div class="portrait-column">
           <img class="portrait" src="https://hao-liu-china.github.io/images/LH.jpg" alt="Portrait of Hao Liu">
@@ -699,15 +748,24 @@
     backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     setBackTop();
 
-    const sections = Array.from(document.querySelectorAll('main section[id]'));
     const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+    const navSections = Array.from(document.querySelectorAll('#biography, #news, #publications, #about'));
+    const syncActiveNav = () => {
+      let current = '#home';
+      const marker = window.scrollY + 90;
+      navSections.forEach((section) => {
+        if (section.offsetTop <= marker) current = '#' + section.id;
       });
-    }, { rootMargin: '-25% 0px -65% 0px' });
-    sections.forEach((section) => observer.observe(section));
+      navLinks.forEach((link) => {
+        const active = link.getAttribute('href') === current;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    window.addEventListener('scroll', syncActiveNav, { passive: true });
+    window.addEventListener('resize', syncActiveNav);
+    syncActiveNav();
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
