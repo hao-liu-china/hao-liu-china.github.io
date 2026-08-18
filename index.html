@@ -341,23 +341,39 @@
     .authors .me { font-weight: 700; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
     .venue { margin: 0; color: #343b41; font-size: 20px; }
     .venue strong { color: #bd2e2e; font-weight: 650; }
-    .pub-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 11px; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
     .pub-links a {
-      display: inline-block;
-      padding: 5px 14px 6px;
-      border: 1px solid #c7d1da;
-      border-radius: 20px;
-      color: #17385a;
-      background: #fbfcfd;
-      font-size: 18px;
-      line-height: 1.35;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      height: 38px;
+      padding: 0 13px;
+      border: 1px solid #c9d2dc;
+      border-radius: 999px;
+      color: #102f50;
+      background: #fff;
+      font-size: 17px;
+      line-height: 1;
+      white-space: nowrap;
     }
-    .pub-links a:hover { background: #f1f7fb; text-decoration: none; }
-    .pub-links a::before { display: inline-block; margin-right: 6px; font-size: .9em; }
-    .link-pdf::before { content: "▧"; }
-    .link-arxiv::before { content: "⌁"; }
-    .link-code::before { content: "⌘"; }
-    .link-web::before { content: "●"; }
+    .pub-links a:hover {
+      color: var(--accent-dark);
+      background: #e8f2fa;
+      border-color: #9eb6ca;
+      text-decoration: none;
+    }
+    .pub-links svg {
+      flex: 0 0 auto;
+      width: 19px;
+      height: 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .pub-links .icon-github { fill: currentColor; stroke: none; }
 
     .compact-publications { margin: 3px 0 0; padding-left: 25px; font-size: 20px; }
     .compact-publications li { padding: 7px 0; }
@@ -488,7 +504,6 @@
       <div class="icon-links" aria-label="Academic and contact links">
         <a href="https://scholar.google.com/citations?hl=en&amp;user=CEEtEnoAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 8l4 2.18V16l7 4 7-4v-5.82L21 9.09V17h2V8L12 2Zm0 11.74L5.95 10.5 12 7.2l6.05 3.3L12 13.74Z"/></svg></a>
         <a href="https://faculty.ecnu.edu.cn/_s52/lh2_en/main.psp" target="_blank" rel="noopener" aria-label="ECNU faculty profile" title="ECNU Profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 7v2h22V7L12 2ZM4 11v7H2v3h20v-3h-2v-7h-3v7h-3v-7h-4v7H7v-7H4Z"/></svg></a>
-        <a href="https://github.com/hao-liu-china" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.24c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.7.82.58A12 12 0 0 0 12 .7Z"/></svg></a>
         <a href="https://orcid.org/0000-0001-5955-1577" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><span class="orcid-mark" aria-hidden="true">iD</span></a>
         <a href="mailto:hliu@geoai.ecnu.edu.cn" aria-label="Email Hao Liu" title="Email">✉</a>
       </div>
@@ -532,7 +547,7 @@
 
       <h3 class="funding-subheading">在研</h3>
       <ul class="funding-list">
-        <li><strong>上海市白玉兰人才计划浦江项目</strong>, <span class="funding-meta">2025.12--2027.11</span><span class="funding-role">项目负责人</span></li>
+        <li><strong>上海市白玉兰人才计划浦江项目</strong>, <span class="funding-meta">2025.12--2027.11</span>, <span class="funding-role">项目负责人</span></li>
       </ul>
     </section>
     
@@ -545,7 +560,6 @@
             <h4 class="pub-title"><a href="https://link.springer.com/book/10.1007/978-981-95-0648-4" target="_blank" rel="noopener">Point Cloud Intelligence</a></h4>
             <p class="authors">Yulan Guo, Sheng Ao, Zhiheng Fu, <span class="me">Hao Liu</span>, Qingyong Hu</p>
             <p class="venue">Springer Singapore, 2026. <strong>Monograph</strong></p>
-            <div class="pub-links"><a href="https://link.springer.com/book/10.1007/978-981-95-0648-4" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="guo2026point"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
           </div>
         </article>
 
@@ -555,7 +569,7 @@
             <h4 class="pub-title"><a href="https://openreview.net/forum?id=YwuZqvMQ7o" target="_blank" rel="noopener">Radial Scaling Voxelization for Accurate Small Object 3D Detection</a></h4>
             <p class="authors"><span class="me">Hao Liu</span>, Yi Zhou, Yanni Ma</p>
             <p class="venue">International Conference on Machine Learning, 2026. <strong>ICML 2026</strong></p>
-            <div class="pub-links"><a href="https://openreview.net/pdf/a0b02b8d08a30691ccc17eaca438598cee7a6817.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://openreview.net/forum?id=YwuZqvMQ7o" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Project</a><a href="https://github.com/Zeoy2020/RadialScalingVoxelization" target="_blank" rel="noopener"><svg class="icon-github" aria-hidden="true"><use href="#icon-github"></use></svg>Code</a><button class="bibtex-button" type="button" data-bibtex="liu2026radial"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://openreview.net/pdf/a0b02b8d08a30691ccc17eaca438598cee7a6817.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a><a href="https://github.com/Zeoy2020/RadialScalingVoxelization" target="_blank" rel="noopener"><svg class="icon-github" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.14c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.26 3.36.96.11-.75.4-1.26.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.79.56A11.5 11.5 0 0 0 12 .8Z"></path></svg><span>Code</span></a></div>
           </div>
         </article>
 
@@ -565,7 +579,7 @@
             <h4 class="pub-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/37728" target="_blank" rel="noopener">Edge-Centric Relational Reasoning for 3D Scene Graph Prediction</a></h4>
             <p class="authors">Yanni Ma, <span class="me">Hao Liu</span>, Yulan Guo, Theo Gevers, Martin R. Oswald</p>
             <p class="venue">AAAI Conference on Artificial Intelligence, 2026. <strong>AAAI 2026</strong></p>
-            <div class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/37728/41690" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://arxiv.org/abs/2511.15288" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-arxiv"></use></svg>arXiv</a><a href="https://ojs.aaai.org/index.php/AAAI/article/view/37728" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Project</a><button class="bibtex-button" type="button" data-bibtex="ma2026edge"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/37728/41690" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -575,7 +589,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/11314175/" target="_blank" rel="noopener">Enhanced Geometry and Semantics for Camera-Based 3D Semantic Scene Completion</a></h4>
             <p class="authors">Haihong Xiao, Wenxiong Kang, <span class="me">Hao Liu</span>, Yuqiong Li, Ying He</p>
             <p class="venue">IEEE Transactions on Image Processing, 2025. <strong>TIP</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel8/83/11355710/11314175.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://ieeexplore.ieee.org/document/11314175/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="xiao2025enhanced"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel8/83/11355710/11314175.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -585,7 +599,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/11091594/" target="_blank" rel="noopener">SF-City: A Source-Free Domain Adaptation Method for City-scale Point Cloud Semantic Segmentation</a></h4>
             <p class="authors">Yan Liu, Hongyuan Zhu, Yingjie Lei, <span class="me">Hao Liu</span>, Yun Pei, Yulan Guo</p>
             <p class="venue">IEEE Transactions on Multimedia, 2025. <strong>TMM</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel8/6046/4456689/11091594.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://ieeexplore.ieee.org/document/11091594/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="liu2025sfcity"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel8/6046/4456689/11091594.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -595,7 +609,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/10804191/" target="_blank" rel="noopener">Semantic Scene Completion via Semantic-aware Guidance and Interactive Refinement Transformer</a></h4>
             <p class="authors">Haihong Xiao, Wenxiong Kang, <span class="me">Hao Liu</span>, Yuqiong Li, Ying He</p>
             <p class="venue">IEEE Transactions on Circuits and Systems for Video Technology, 2024. <strong>TCSVT</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel8/76/10989278/10804191.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://ieeexplore.ieee.org/document/10804191/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="xiao2024semantic"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel8/76/10989278/10804191.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -605,7 +619,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/10589366/" target="_blank" rel="noopener">Point Cloud Completion via Self-projected View Augmentation and Implicit Field Constraint</a></h4>
             <p class="authors">Haihong Xiao, Ying He, <span class="me">Hao Liu</span>, Wenxiong Kang, Yuqiong Li</p>
             <p class="venue">IEEE Transactions on Circuits and Systems for Video Technology, 2024. <strong>TCSVT</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel8/76/4358651/10589366.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://ieeexplore.ieee.org/document/10589366/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="xiao2024completion"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel8/76/4358651/10589366.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -615,7 +629,7 @@
             <h4 class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-031-73347-5_16" target="_blank" rel="noopener">Heterogeneous Graph Learning for Scene Graph Prediction in 3D Point Clouds</a></h4>
             <p class="authors">Yanni Ma, <span class="me">Hao Liu</span>, Yun Pei, Yulan Guo</p>
             <p class="venue">European Conference on Computer Vision, 2024. <strong>ECCV 2024</strong></p>
-            <div class="pub-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-73347-5_16" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><a href="https://github.com/Anne-Yanni-Ma/3DHetSGP" target="_blank" rel="noopener"><svg class="icon-github" aria-hidden="true"><use href="#icon-github"></use></svg>Code</a><button class="bibtex-button" type="button" data-bibtex="ma2024heterogeneous"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://github.com/Anne-Yanni-Ma/3DHetSGP" target="_blank" rel="noopener"><svg class="icon-github" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.14c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.26 3.36.96.11-.75.4-1.26.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.79.56A11.5 11.5 0 0 0 12 .8Z"></path></svg><span>Code</span></a></div>
           </div>
         </article>
 
@@ -625,7 +639,6 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/10348603/" target="_blank" rel="noopener">Self-Supervised Multi-Frame Monocular Depth Estimation for Dynamic Scenes</a></h4>
             <p class="authors">Guanghui Wu, <span class="me">Hao Liu</span>, Longguang Wang, Kunhong Li, Yulan Guo, Zengping Chen</p>
             <p class="venue">IEEE Transactions on Circuits and Systems for Video Technology, 2023. <strong>TCSVT</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/document/10348603/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="wu2023selfsupervised"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
           </div>
         </article>
 
@@ -635,7 +648,6 @@
             <h4 class="pub-title"><a href="https://doi.org/10.1109/TITS.2023.3282204" target="_blank" rel="noopener">AnchorPoint: Query Design for Transformer-Based 3D Object Detection and Tracking</a></h4>
             <p class="authors"><span class="me">Hao Liu</span>, Yanni Ma, Hanyun Wang, Chaobo Zhang, Yulan Guo</p>
             <p class="venue">IEEE Transactions on Intelligent Transportation Systems, 2023. <strong>TITS</strong></p>
-            <div class="pub-links"><a href="https://doi.org/10.1109/TITS.2023.3282204" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="liu2023anchorpoint"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
           </div>
         </article>
 
@@ -645,7 +657,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/10034949/" target="_blank" rel="noopener">CenterTube: Tracking Multiple 3D Objects with 4D Tubelets in Dynamic Point Clouds</a></h4>
             <p class="authors"><span class="me">Hao Liu</span>, Yanni Ma, Qingyong Hu, Yulan Guo</p>
             <p class="venue">IEEE Transactions on Multimedia, 2023. <strong>TMM</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/6046/4456689/10034949.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://ieeexplore.ieee.org/document/10034949/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="liu2023centertube"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/6046/4456689/10034949.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -655,7 +667,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9999269/" target="_blank" rel="noopener">DeepPCT: Single Object Tracking in Dynamic Point Cloud Sequences</a></h4>
             <p class="authors"><span class="me">Hao Liu</span>, Qingyong Hu, Yanni Ma, Kai Xie, Yulan Guo</p>
             <p class="venue">IEEE Transactions on Instrumentation and Measurement, 2023. <strong>TIM</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/19/10012124/09999269.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://ieeexplore.ieee.org/document/9999269/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="liu2023deeppct"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/19/10012124/09999269.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -665,7 +677,7 @@
             <h4 class="pub-title"><a href="https://openaccess.thecvf.com/content/WACV2022/html/Wei_Spatial-Temporal_Transformer_for_3D_Point_Cloud_Sequences_WACV_2022_paper.html" target="_blank" rel="noopener">Spatial-Temporal Transformer for 3D Point Cloud Sequences</a></h4>
             <p class="authors">Yimin Wei, <span class="me">Hao Liu</span>, Tingting Xie, Qiuhong Ke, Yulan Guo</p>
             <p class="venue">IEEE/CVF Winter Conference on Applications of Computer Vision, 2022. <strong>WACV 2022</strong></p>
-            <div class="pub-links"><a href="https://openaccess.thecvf.com/content/WACV2022/papers/Wei_Spatial-Temporal_Transformer_for_3D_Point_Cloud_Sequences_WACV_2022_paper.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://arxiv.org/abs/2110.09783" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-arxiv"></use></svg>arXiv</a><a href="https://openaccess.thecvf.com/content/WACV2022/html/Wei_Spatial-Temporal_Transformer_for_3D_Point_Cloud_Sequences_WACV_2022_paper.html" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Project</a><button class="bibtex-button" type="button" data-bibtex="wei2022spatial"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://openaccess.thecvf.com/content/WACV2022/papers/Wei_Spatial-Temporal_Transformer_for_3D_Point_Cloud_Sequences_WACV_2022_paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -675,7 +687,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9625976/" target="_blank" rel="noopener">Detecting and Tracking Small and Dense Moving Objects in Satellite Videos: A Benchmark</a></h4>
             <p class="authors">Qian Yin, Qingyong Hu, <span class="me">Hao Liu</span>, Feng Zhang, Yingqian Wang, Zaiping Lin, Wei An, Yulan Guo</p>
             <p class="venue">IEEE Transactions on Geoscience and Remote Sensing, 2021. <strong>TGRS</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/36/9633014/09625976.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://arxiv.org/abs/2111.12960" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-arxiv"></use></svg>arXiv</a><a href="https://github.com/QingyongHu/VISO" target="_blank" rel="noopener"><svg class="icon-github" aria-hidden="true"><use href="#icon-github"></use></svg>Code</a><button class="bibtex-button" type="button" data-bibtex="yin2021detecting"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/36/9633014/09625976.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a><a href="https://github.com/QingyongHu/VISO" target="_blank" rel="noopener"><svg class="icon-github" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.14c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.26 3.36.96.11-.75.4-1.26.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.79.56A11.5 11.5 0 0 0 12 .8Z"></path></svg><span>Code</span></a></div>
           </div>
         </article>
 
@@ -685,7 +697,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9136884/" target="_blank" rel="noopener">Semantic Context Encoding for Accurate 3D Point Cloud Segmentation</a></h4>
             <p class="authors"><span class="me">Hao Liu</span>, Yulan Guo, Yanni Ma, Yinjie Lei, Gongjian Wen</p>
             <p class="venue">IEEE Transactions on Multimedia, 2021. <strong>TMM</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/6046/9296985/09136884.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://ieeexplore.ieee.org/document/9136884/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="liu2021semantic"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/6046/9296985/09136884.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -695,7 +707,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9127813/" target="_blank" rel="noopener">Deep Learning for 3D Point Clouds: A Survey</a></h4>
             <p class="authors">Yulan Guo, Hanyun Wang, Qingyong Hu, <span class="me">Hao Liu</span>, Li Liu, Mohammed Bennamoun</p>
             <p class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence, 2021. <strong>TPAMI</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/34/4359286/09127813.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://arxiv.org/abs/1912.12033" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-arxiv"></use></svg>arXiv</a><a href="https://github.com/QingyongHu/SoTA-Point-Cloud" target="_blank" rel="noopener"><svg class="icon-github" aria-hidden="true"><use href="#icon-github"></use></svg>Code</a><button class="bibtex-button" type="button" data-bibtex="guo2021deep"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/iel7/34/4359286/09127813.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a><a href="https://github.com/QingyongHu/SoTA-Point-Cloud" target="_blank" rel="noopener"><svg class="icon-github" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.14c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.26 3.36.96.11-.75.4-1.26.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.79.56A11.5 11.5 0 0 0 12 .8Z"></path></svg><span>Code</span></a></div>
           </div>
         </article>
 
@@ -705,7 +717,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8708248/" target="_blank" rel="noopener">Robust Long-Term Tracking via Instance-Specific Proposals</a></h4>
             <p class="authors"><span class="me">Hao Liu</span>, Qingyong Hu, Biao Li, Yulan Guo</p>
             <p class="venue">IEEE Transactions on Instrumentation and Measurement, 2020. <strong>TIM</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8708248" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://ieeexplore.ieee.org/document/8708248/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="liu2020robust"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8708248" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -715,7 +727,7 @@
             <h4 class="pub-title"><a href="https://openaccess.thecvf.com/content_WACV_2020/html/Ma_Global_Context_Reasoning_for_Semantic_Segmentation_of_3D_Point_Clouds_WACV_2020_paper.html" target="_blank" rel="noopener">Global Context Reasoning for Semantic Segmentation of 3D Point Clouds</a></h4>
             <p class="authors">Yanni Ma, Yulan Guo, <span class="me">Hao Liu</span>, Yinjie Lei, Gongjian Wen</p>
             <p class="venue">IEEE/CVF Winter Conference on Applications of Computer Vision, 2020. <strong>WACV 2020</strong></p>
-            <div class="pub-links"><a href="https://openaccess.thecvf.com/content_WACV_2020/papers/Ma_Global_Context_Reasoning_for_Semantic_Segmentation_of_3D_Point_Clouds_WACV_2020_paper.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://openaccess.thecvf.com/content_WACV_2020/html/Ma_Global_Context_Reasoning_for_Semantic_Segmentation_of_3D_Point_Clouds_WACV_2020_paper.html" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Project</a><button class="bibtex-button" type="button" data-bibtex="ma2020global"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://openaccess.thecvf.com/content_WACV_2020/papers/Ma_Global_Context_Reasoning_for_Semantic_Segmentation_of_3D_Point_Clouds_WACV_2020_paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
 
@@ -725,7 +737,7 @@
             <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8545780/" target="_blank" rel="noopener">Long-Term Object Tracking with Instance Specific Proposals</a></h4>
             <p class="authors"><span class="me">Hao Liu</span>, Qingyong Hu, Biao Li, Yulan Guo</p>
             <p class="venue">International Conference on Pattern Recognition, 2018. <strong>ICPR 2018</strong></p>
-            <div class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8545780" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-pdf"></use></svg>PDF</a><a href="https://ieeexplore.ieee.org/document/8545780/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#icon-globe"></use></svg>Publisher</a><button class="bibtex-button" type="button" data-bibtex="liu2018longterm"><svg aria-hidden="true"><use href="#icon-bibtex"></use></svg>BibTeX</button></div>
+            <div class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8545780" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4"></path><path d="M8.2 16.8c2.3-3.7 3.6-6.3 3.9-8 .2 2.2 1.2 4.4 3 6.6-2.6-.5-4.8-.2-6.9 1.4Z"></path></svg><span>PDF</span></a></div>
           </div>
         </article>
       </div>
