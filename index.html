@@ -456,8 +456,8 @@
       <li><a class="active" href="#home" aria-current="page">Home</a></li>
       <li><a href="#biography">Biography</a></li>
       <li><a href="#news">News</a></li>
+      <li><a href="#funding">Funding</a></li>
       <li><a href="#publications">Publications</a></li>
-      <li><a href="#about">About</a></li>
     </ul>
   </nav>
 
@@ -714,34 +714,8 @@
       </div>
     </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
-      <h2 class="section-heading" id="about-title">About</h2>
-      <div class="two-column">
-        <div>
-          <h3 class="minor-heading">Appointments &amp; Education</h3>
-          <ul class="plain-list">
-            <li><strong>2025–present:</strong> Zijiang Young Scholar, ECNU</li>
-            <li><strong>2023–2025:</strong> Postdoctoral Research Fellow, NTU</li>
-            <li><strong>2023:</strong> Ph.D., Sun Yat-sen University</li>
-            <li><strong>2018:</strong> M.E., National University of Defense Technology</li>
-            <li><strong>2016:</strong> B.E., University of Electronic Science and Technology of China</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="minor-heading">Selected Honors</h3>
-          <ul class="plain-list">
-            <li>Excellent Graduate, Sun Yat-sen University, 2023</li>
-            <li>Wang Shujun Donation Scholarship, 2023</li>
-            <li>National Scholarship, Ministry of Education, China, 2020</li>
-            <li>Third Prize, National Post-Graduate Mathematical Contest in Modeling, 2018</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <footer>
       <p>© <span id="year">2026</span> Hao Liu. Last updated August 2026.</p>
-      <p>Design inspired by <a href="https://www.kaihan.org/" target="_blank" rel="noopener">Kai Han's academic homepage</a>.</p>
     </footer>
   </main>
 
@@ -764,7 +738,7 @@
     setBackTop();
 
     const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-    const navSections = Array.from(document.querySelectorAll('#biography, #news, #publications, #about'));
+    const navSections = Array.from(document.querySelectorAll('#biography, #news, #funding, #publications'));
     const syncActiveNav = () => {
       let current = '#home';
       const marker = window.scrollY + 90;
