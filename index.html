@@ -392,6 +392,21 @@
     }
     .plain-list { margin: 0; padding-left: 22px; font-size: 20px; }
     .plain-list li { margin-bottom: 8px; }
+    .service-list {
+      margin: 0;
+      padding-left: 24px;
+      font-size: 20px;
+      list-style-type: circle;
+    }
+    .service-list > li { margin-bottom: 22px; }
+    .service-list > li:last-child { margin-bottom: 0; }
+    .service-list ul {
+      margin: 9px 0 0;
+      padding-left: 34px;
+      list-style-type: square;
+    }
+    .service-list ul li { margin: 6px 0; padding-left: 3px; }
+    .service-category { font-weight: 600; }
     .minor-heading { margin: 0 0 13px; font-size: 24px; }
 
     footer {
@@ -474,6 +489,9 @@
       <li><a href="#news">News</a></li>
       <li><a href="#funding">Funding</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#service">Service</a></li>
     </ul>
   </nav>
 
@@ -504,6 +522,7 @@
       <div class="icon-links" aria-label="Academic and contact links">
         <a href="https://scholar.google.com/citations?hl=en&amp;user=CEEtEnoAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 8l4 2.18V16l7 4 7-4v-5.82L21 9.09V17h2V8L12 2Zm0 11.74L5.95 10.5 12 7.2l6.05 3.3L12 13.74Z"/></svg></a>
         <a href="https://faculty.ecnu.edu.cn/_s52/lh2_en/main.psp" target="_blank" rel="noopener" aria-label="ECNU faculty profile" title="ECNU Profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 7v2h22V7L12 2ZM4 11v7H2v3h20v-3h-2v-7h-3v7h-3v-7h-4v7H7v-7H4Z"/></svg></a>
+        <a href="https://github.com/hao-liu-china" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.24c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.7.82.58A12 12 0 0 0 12 .7Z"/></svg></a>
         <a href="https://orcid.org/0000-0001-5955-1577" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><span class="orcid-mark" aria-hidden="true">iD</span></a>
         <a href="mailto:hliu@geoai.ecnu.edu.cn" aria-label="Email Hao Liu" title="Email">✉</a>
       </div>
@@ -547,7 +566,7 @@
 
       <h3 class="funding-subheading">在研</h3>
       <ul class="funding-list">
-        <li><strong>上海市白玉兰人才计划浦江项目</strong>, <span class="funding-meta">2025.12--2027.11</span>, <span class="funding-role">项目负责人</span></li>
+        <li><strong>上海市白玉兰人才计划浦江项目</strong>, <span class="funding-meta">2025.12--2027.11</span><span class="funding-role">项目负责人</span></li>
       </ul>
     </section>
     
@@ -743,29 +762,46 @@
       </div>
     </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
-      <h2 class="section-heading" id="about-title">About</h2>
-      <div class="two-column">
-        <div>
-          <h3 class="minor-heading">Appointments &amp; Education</h3>
-          <ul class="plain-list">
-            <li><strong>2025–present:</strong> Zijiang Young Scholar, ECNU</li>
-            <li><strong>2023–2025:</strong> Postdoctoral Research Fellow, NTU</li>
-            <li><strong>2023:</strong> Ph.D., Sun Yat-sen University</li>
-            <li><strong>2018:</strong> M.E., National University of Defense Technology</li>
-            <li><strong>2016:</strong> B.E., University of Electronic Science and Technology of China</li>
+    <section class="section" id="awards" aria-labelledby="awards-title">
+      <h2 class="section-heading" id="awards-title">Awards</h2>
+      <ul class="plain-list">
+        <li>Shanghai Overseas High-Level Talent Program（上海市海外高层次人才计划）, 2025</li>
+        <li>Ministry of Education's Overseas Postdoctoral Talent Introduction Program（教育部博士后海外引才专项）, 2025</li>
+      </ul>
+    </section>
+
+    <section class="section" id="teaching" aria-labelledby="teaching-title">
+      <h2 class="section-heading" id="teaching-title">Teaching</h2>
+      <ul class="plain-list">
+        <li>Artificial Intelligence and Machine Learning（人工智能与机器学习）</li>
+        <li>Introduction to Artificial Intelligence（人工智能导论）</li>
+      </ul>
+    </section>
+
+    <section class="section" id="service" aria-labelledby="service-title">
+      <h2 class="section-heading" id="service-title">Service</h2>
+      <ul class="service-list">
+        <li>
+          <span class="service-category">Conference reviewer/Program committee:</span>
+          <ul>
+            <li>International Conference on Machine Learning (ICML)</li>
+            <li>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</li>
+            <li>IEEE International Conference on Computer Vision (ICCV)</li>
+            <li>European Conference on Computer Vision (ECCV)</li>
+            <li>Association for the Advancement of Artificial Intelligence (AAAI)</li>
           </ul>
-        </div>
-        <div>
-          <h3 class="minor-heading">Selected Honors</h3>
-          <ul class="plain-list">
-            <li>Excellent Graduate, Sun Yat-sen University, 2023</li>
-            <li>Wang Shujun Donation Scholarship, 2023</li>
-            <li>National Scholarship, Ministry of Education, China, 2020</li>
-            <li>Third Prize, National Post-Graduate Mathematical Contest in Modeling, 2018</li>
+        </li>
+        <li>
+          <span class="service-category">Journal reviewer:</span>
+          <ul>
+            <li>IEEE Transactions on Visualization and Computer Graphics (TVCG)</li>
+            <li>IEEE Transactions on Multimedia (TMM)</li>
+            <li>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
+            <li>IEEE Transactions on Geoscience and Remote Sensing (TGRS)</li>
+
           </ul>
-        </div>
-      </div>
+        </li>
+      </ul>
     </section>
 
     <footer>
@@ -792,7 +828,7 @@
     setBackTop();
 
     const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-    const navSections = Array.from(document.querySelectorAll('#biography, #news, #funding, #publications'));
+    const navSections = Array.from(document.querySelectorAll('#biography, #news, #funding, #publications, #awards, #teaching, #service'));
     const syncActiveNav = () => {
       let current = '#home';
       const marker = window.scrollY + 90;
