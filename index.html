@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Hao Liu — Zijiang Young Scholar at East China Normal University. Research in 3D vision, point cloud understanding, object detection, tracking, and reconstruction.">
+  <meta name="description" content="Hao Liu — Zijiang Young Scholar at East China Normal University. Research in spatial intelligence, 3D vision, and point cloud processing.">
   <meta name="author" content="Hao Liu">
   <meta name="theme-color" content="#ffffff">
   <title>Hao Liu | 刘浩</title>
@@ -13,10 +13,9 @@
       --accent-dark: #0f5d95;
       --ink: #22272d;
       --muted: #626b73;
-      --light: #8a9299;
       --line: #e4e8eb;
-      --soft: #f6f8fa;
-      --paper: #ffffff;
+      --year-bg: #eef1f3;
+      --paper-bg: #fafafa;
       --max-width: 1440px;
     }
 
@@ -25,14 +24,12 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--paper);
+      background: #fff;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 20px;
-      line-height: 1.62;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
-
     a { color: var(--accent); text-decoration: none; }
     a:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
     img { max-width: 100%; display: block; }
@@ -43,7 +40,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      width: min(calc(100% - 192px), var(--max-width));
+      width: min(calc(100% - 80px), var(--max-width));
       margin: 24px auto 0;
       background: #2f3e50;
       box-shadow: 0 3px 8px rgba(28, 40, 54, .2);
@@ -62,93 +59,36 @@
       color: #fff;
       font-size: 20px;
       font-weight: 500;
-      line-height: 1.45;
       white-space: nowrap;
     }
-    .nav-links a:hover {
+    .nav-links a:hover, .nav-links a.active {
       color: #fff;
       background: #3b4d61;
       text-decoration: none;
     }
-    .nav-links a.active {
-      color: #fff;
-      background: #559bd2;
-    }
+    .nav-links a.active { background: #559bd2; }
 
     main {
-      width: min(calc(100% - 192px), var(--max-width));
+      width: min(calc(100% - 80px), var(--max-width));
       margin: 0 auto;
-      padding: 46px 0 18px;
+      padding: 46px 0 60px;
     }
-
-    .profile-shell {
-      padding-bottom: 31px;
-      border-bottom: 1px solid var(--line);
-    }
-
+    .profile-shell { padding-bottom: 31px; border-bottom: 1px solid var(--line); }
     .profile {
       display: grid;
       grid-template-columns: 310px minmax(0, 1fr);
       gap: 76px;
       align-items: start;
     }
-
-    .portrait-column { min-width: 0; }
     .portrait {
       width: 310px;
       aspect-ratio: 3 / 4;
-      margin: 0;
       border-radius: 15px;
       object-fit: cover;
       object-position: center 22%;
       box-shadow: 0 4px 17px rgba(31, 41, 51, .3);
-      background: var(--soft);
+      background: #f6f8fa;
     }
-
-    .contact-block {
-      display: grid;
-      gap: 1px;
-      margin: 31px 0 22px 3px;
-      color: #15191d;
-      font-size: 22px;
-      line-height: 1.25;
-    }
-    .contact-row {
-      display: grid;
-      grid-template-columns: 63px 1fr;
-      align-items: baseline;
-    }
-    .contact-icon {
-      display: flex;
-      align-items: center;
-      color: #060708;
-      padding-left: 6px;
-    }
-    .contact-icon svg { width: 23px; height: 23px; }
-    .email-address { font-style: italic; }
-
-    .icon-links {
-      display: flex;
-      align-items: center;
-      margin-left: 2px;
-    }
-    .icon-links a {
-      display: grid;
-      place-items: center;
-      min-width: 48px;
-      height: 34px;
-      padding: 0 10px;
-      border-right: 1px solid #c7cdd2;
-      color: #2863b7;
-      font-size: 21px;
-      font-weight: 700;
-      line-height: 1;
-    }
-    .icon-links a:first-child { padding-left: 0; min-width: 38px; }
-    .icon-links a:last-child { border-right: 0; }
-    .icon-links a:hover { color: #174d9d; text-decoration: none; }
-    .icon-links .small-mark { font-size: 14px; letter-spacing: -.03em; }
-
     .profile-copy h1 {
       margin: -7px 0 5px;
       color: #171a1d;
@@ -160,46 +100,35 @@
     }
     .name-cn {
       display: block;
-      margin: 0 0 23px;
+      margin-bottom: 23px;
       color: #545c63;
-      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
       font-size: 34px;
-      font-weight: 400;
       letter-spacing: .04em;
     }
-    .position {
-      margin: 0 0 15px;
-      color: #24292e;
-      font-size: 24px;
-      font-weight: 650;
-      line-height: 1.45;
+    .position { margin: 3px 0; font-size: 24px; font-weight: 650; line-height: 1.45; }
+    .contact-block { display: grid; gap: 7px; margin: 28px 0 18px; font-size: 20px; }
+    .contact-row { display: grid; grid-template-columns: 32px 1fr; gap: 10px; align-items: baseline; }
+    .contact-symbol { color: #111; text-align: center; }
+    .email-address { font-style: italic; }
+    .icon-links { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 25px; }
+    .icon-links a {
+      padding: 5px 12px;
+      border-right: 1px solid #c7cdd2;
+      color: #2863b7;
+      font-size: 18px;
+      font-weight: 700;
     }
-    .affiliation {
-      margin: 1px 0;
-      color: var(--muted);
-      font-size: 24px;
-      line-height: 1.5;
-    }
-
-    .bio {
-      margin-top: 25px;
-      color: #111416;
-      font-size: 22px;
-      line-height: 1.42;
-    }
-    .bio p { margin: 0 0 10px; }
-    .bio strong { color: #20252a; }
-
+    .icon-links a:last-child { border-right: 0; }
+    .bio { color: #111416; font-size: 21px; line-height: 1.5; }
+    .bio p { margin: 0 0 11px; }
     .opening {
       position: relative;
       margin-top: 24px;
       padding: 50px 29px 20px;
-      border: 0;
-      background: #fff9e9;
       border-radius: 0 12px 12px 12px;
+      background: #fff9e9;
       color: #201f1a;
-      font-size: 22px;
-      line-height: 1.42;
+      font-size: 21px;
     }
     .opening-label {
       position: absolute;
@@ -214,13 +143,10 @@
       letter-spacing: .11em;
     }
     .opening p { margin: 0 0 7px; }
-    .opening p:last-child { margin-bottom: 0; color: #5e5130; }
-    .opening strong { color: #181711; }
-
     .section { padding: 42px 0 7px; }
     .section + .section { border-top: 1px solid var(--line); margin-top: 36px; }
     .section-heading {
-      margin: 0 0 23px;
+      margin: 0 0 26px;
       color: #1b2025;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 38px;
@@ -228,23 +154,11 @@
       letter-spacing: -.025em;
       line-height: 1.2;
     }
-
-    .news-list { list-style: none; margin: 0; padding: 0; }
-    .news-list li {
-      display: grid;
-      grid-template-columns: 118px 1fr;
-      gap: 20px;
-      padding: 7px 0;
-      font-size: 20px;
-    }
-    .news-list time {
-      color: var(--light);
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-    }
+    .news-list, .funding-list { margin: 0; padding: 0; list-style: none; }
+    .news-list li { display: grid; grid-template-columns: 118px 1fr; gap: 20px; padding: 7px 0; }
+    .news-list time { color: #8a9299; white-space: nowrap; font-variant-numeric: tabular-nums; }
     .news-list p { margin: 0; }
     .news-old[hidden] { display: none; }
-
     .text-toggle {
       margin: 14px 0 0 138px;
       padding: 0;
@@ -255,170 +169,129 @@
       font-size: 18px;
       font-weight: 600;
     }
-    .text-toggle:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+    .funding-intro { margin: -9px 0 22px; color: var(--muted); }
+    .funding-subheading { margin: 23px 0 8px; font-size: 24px; }
+    .funding-list { padding-left: 24px; list-style: disc; }
+    .funding-list li { padding: 5px 0; }
+    .funding-meta { color: var(--muted); }
+    .funding-role { color: #8a3b23; font-weight: 600; }
 
-    .year-block { margin-bottom: 42px; }
-    .year-title {
-      margin: 0 0 13px;
-      color: #3c444b;
-      font-size: 26px;
-      font-weight: 650;
-      letter-spacing: -.01em;
-    }
-
-    .publication {
+    .publication-years { display: grid; gap: 30px; }
+    .year-group { min-width: 0; }
+    .year-summary {
       display: grid;
-      grid-template-columns: 330px minmax(0, 1fr);
-      gap: 30px;
-      padding: 23px 0 25px;
+      gap: 7px;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
     }
-    .publication + .publication { border-top: 1px solid #edf0f2; }
-
-    .pub-thumb {
-      width: 330px;
-      height: 174px;
-      overflow: hidden;
-      border: 1px solid #e1e5e8;
-      border-radius: 3px;
-      background: #f4f6f8;
+    .year-summary::-webkit-details-marker { display: none; }
+    .year-summary:focus-visible {
+      outline: 3px solid rgba(23, 114, 180, .25);
+      outline-offset: 4px;
     }
-    .pub-thumb img { width: 100%; height: 100%; object-fit: cover; }
-
-    .pub-cover {
+    .year-bar {
+      display: block;
+      padding: 13px 22px;
+      border-left: 6px solid #569cda;
+      background: var(--year-bg);
+      color: #111;
+      font-size: 27px;
+      font-weight: 750;
+      line-height: 1.35;
+    }
+    .year-meta {
       position: relative;
-      display: grid;
-      place-items: center;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      color: white;
-      background:
-        radial-gradient(circle at 28% 24%, rgba(73, 170, 222, .8), transparent 22%),
-        radial-gradient(circle at 75% 75%, rgba(41, 108, 154, .8), transparent 24%),
-        linear-gradient(135deg, #19324d, #0b6c9f 55%, #102c43);
+      display: block;
+      padding-left: 27px;
+      color: #15191d;
+      font-size: 21px;
+      line-height: 1.45;
     }
-    .pub-cover::before, .pub-cover::after {
+    .year-meta::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      color: #111;
+      font-size: 17px;
+      transition: transform .18s ease;
+    }
+    details[open] > .year-summary .year-meta::before { transform: rotate(90deg); }
+
+    .year-papers {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .paper-item {
+      position: relative;
+      padding: 20px 24px 20px 27px;
+      border-left: 3px solid #bec7cf;
+      background: var(--paper-bg);
+    }
+    .paper-item::before {
       content: "";
       position: absolute;
-      width: 78px;
-      height: 78px;
-      border: 1px solid rgba(255, 255, 255, .28);
-      transform: rotate(35deg);
+      left: -7px;
+      top: 31px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #111;
     }
-    .pub-cover::after { width: 120px; height: 120px; transform: rotate(65deg); }
-    .pub-cover span {
-      position: relative;
-      z-index: 1;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-align: center;
-      text-shadow: 0 1px 8px rgba(0, 0, 0, .28);
-    }
-    .pub-cover.gold {
-      background:
-        radial-gradient(circle at 72% 28%, rgba(240, 193, 99, .65), transparent 26%),
-        linear-gradient(135deg, #30343b, #917039 58%, #2e363d);
-    }
-    .pub-cover.green {
-      background:
-        radial-gradient(circle at 28% 72%, rgba(92, 203, 164, .65), transparent 27%),
-        linear-gradient(135deg, #1e3440, #16817b 58%, #213d3c);
-    }
-
-    .pub-copy { align-self: center; min-width: 0; }
-    .pub-title {
-      margin: 0 0 5px;
-      color: #15191d;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 25px;
-      font-weight: 600;
+    .paper-title {
+      margin: 0 0 6px;
+      font-size: 22px;
+      font-weight: 720;
       line-height: 1.38;
     }
-    .pub-title a { color: inherit; }
-    .pub-title a:hover { color: var(--accent); }
-    .authors { margin: 0 0 4px; color: #30363b; font-size: 20px; line-height: 1.45; }
-    .authors .me { font-weight: 700; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
-    .venue { margin: 0; color: #343b41; font-size: 20px; }
-    .venue strong { color: #bd2e2e; font-weight: 650; }
-    .pub-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .pub-links a {
+    .paper-title a { color: #071b91; }
+    .paper-title a:hover { color: var(--accent); }
+    .authors, .venue { margin: 3px 0; }
+    .authors { color: #20252a; }
+    .authors .me {
+      font-weight: 750;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .venue { color: #111; font-style: italic; }
+    .venue strong { color: #d9362b; font-style: normal; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 10px; }
+    .paper-links a {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 6px;
-      height: 38px;
-      padding: 0 13px;
-      border: 1px solid #c9d2dc;
-      border-radius: 999px;
-      color: #102f50;
+      min-height: 36px;
+      padding: 5px 13px;
+      border: 1px solid #bdd0df;
+      border-radius: 5px;
+      color: var(--accent);
       background: #fff;
       font-size: 17px;
-      line-height: 1;
-      white-space: nowrap;
+      font-weight: 600;
     }
-    .pub-links a:hover {
-      color: var(--accent-dark);
-      background: #e8f2fa;
-      border-color: #9eb6ca;
+    .paper-links a:hover {
+      border-color: #8db0ca;
+      background: #eaf4fb;
       text-decoration: none;
     }
-    .pub-links svg {
-      flex: 0 0 auto;
-      width: 19px;
-      height: 19px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .pub-links .icon-github { fill: currentColor; stroke: none; }
-
-    .compact-publications { margin: 3px 0 0; padding-left: 25px; font-size: 20px; }
-    .compact-publications li { padding: 7px 0; }
-    .compact-publications .paper-name { color: #22272d; font-weight: 600; }
-    .compact-publications .paper-meta { color: var(--muted); }
-    .compact-publications .pub-links { margin-top: 6px; }
-    .compact-publications .pub-links a {
-      padding: 3px 11px 4px;
-      font-size: 16px;
-    }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 54px;
-    }
-    .plain-list { margin: 0; padding-left: 22px; font-size: 20px; }
+    .plain-list { margin: 0; padding-left: 24px; }
     .plain-list li { margin-bottom: 8px; }
-    .service-list {
-      margin: 0;
-      padding-left: 24px;
-      font-size: 20px;
-      list-style-type: circle;
-    }
+    .service-list { margin: 0; padding-left: 24px; list-style-type: circle; }
     .service-list > li { margin-bottom: 22px; }
-    .service-list > li:last-child { margin-bottom: 0; }
-    .service-list ul {
-      margin: 9px 0 0;
-      padding-left: 34px;
-      list-style-type: square;
-    }
-    .service-list ul li { margin: 6px 0; padding-left: 3px; }
-    .service-category { font-weight: 600; }
-    .minor-heading { margin: 0 0 13px; font-size: 24px; }
-
+    .service-list ul { margin: 9px 0 0; padding-left: 34px; list-style-type: square; }
+    .service-list ul li { margin: 6px 0; }
+    .service-category { font-weight: 650; }
     footer {
       margin-top: 48px;
       padding: 26px 0 32px;
       border-top: 1px solid var(--line);
-      color: var(--light);
+      color: #8a9299;
       font-size: 14.5px;
       text-align: center;
     }
     footer p { margin: 2px 0; }
-
     .back-top {
       position: fixed;
       right: 22px;
@@ -439,48 +312,43 @@
     .back-top:hover { transform: translateY(-2px); }
 
     @media (max-width: 760px) {
+      body { font-size: 17px; }
       html { scroll-padding-top: 70px; }
       .site-nav { width: min(calc(100% - 28px), var(--max-width)); margin-top: 14px; }
       .nav-links a { padding: 12px 16px; font-size: 17px; }
       main { width: min(calc(100% - 28px), var(--max-width)); padding-top: 28px; }
       .profile { grid-template-columns: 1fr; gap: 25px; }
       .portrait-column { display: grid; justify-items: center; }
-      .portrait { width: min(280px, 82vw); margin-bottom: 0; }
-      .contact-block { font-size: 18px; }
+      .portrait { width: min(280px, 82vw); }
       .profile-copy h1 { text-align: center; font-size: 43px; }
-      .name-cn { text-align: center; font-size: 28px; margin-bottom: 18px; }
-      .position, .affiliation { text-align: center; }
-      .position { font-size: 20px; }
-      .affiliation { font-size: 19px; }
-      .bio { margin-top: 23px; font-size: 18px; line-height: 1.55; }
-      .opening { padding: 47px 18px 17px; font-size: 18px; }
-      .section { padding-top: 34px; }
-      .section + .section { margin-top: 29px; }
+      .name-cn { text-align: center; font-size: 28px; }
+      .position { text-align: center; font-size: 19px; }
+      .contact-block, .bio, .opening { font-size: 17px; }
+      .opening { padding: 47px 18px 17px; }
       .news-list li { grid-template-columns: 79px 1fr; gap: 11px; }
       .text-toggle { margin-left: 90px; }
-      .publication { grid-template-columns: 142px minmax(0, 1fr); gap: 15px; }
-      .pub-thumb { width: 142px; height: 92px; }
-      .pub-title { font-size: 20px; }
-      .authors, .venue { font-size: 17px; }
-      .pub-links a { font-size: 16px; }
-      .two-column { grid-template-columns: 1fr; gap: 27px; }
+      .section-heading { font-size: 30px; }
+      .publication-years { gap: 24px; }
+      .year-bar { padding: 11px 15px; font-size: 23px; }
+      .year-meta { padding-left: 24px; font-size: 17px; }
+      .year-meta::before { font-size: 14px; }
+      .year-papers { gap: 13px; margin-top: 16px; }
+      .paper-item { padding: 16px 15px 16px 19px; }
+      .paper-title { font-size: 19px; }
+      .paper-links a { font-size: 15px; }
     }
 
     @media (max-width: 520px) {
-      .publication { grid-template-columns: 1fr; gap: 11px; }
-      .pub-thumb { width: 100%; height: auto; aspect-ratio: 16 / 8.4; }
-      .section-heading { font-size: 29px; }
       .news-list li { grid-template-columns: 1fr; gap: 0; padding: 8px 0; }
       .text-toggle { margin-left: 0; }
+      .year-meta { padding-right: 4px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
-
 <body>
   <nav class="site-nav" aria-label="Page navigation">
     <ul class="nav-links">
@@ -505,37 +373,37 @@
         <div class="profile-copy">
           <h1 id="profile-name">Hao Liu</h1>
           <span class="name-cn">刘浩</span>
-          <p class="position">Research Professor (Zijiang Young Scholar) Assistant to the Dean of</p>
-          <p class="position">School of Geospatial Artificial Intelligence,</p>
+          <p class="position">Research Professor (Zijiang Young Scholar), Ph.D. Supervisor, and Assistant to the Dean</p>
+          <p class="position">School of Geospatial Artificial Intelligence</p>
           <p class="position">East China Normal University (ECNU), Shanghai, China</p>
-          <p class="position">青年研究员（"双百人才计划"紫江青年学者），博导，院长助理</p>
+          <p class="position">青年研究员（“双百人才计划”紫江青年学者），博士生导师，院长助理</p>
           <p class="position">华东师范大学空间人工智能学院</p>
         </div>
       </div>
 
       <div class="contact-block" aria-label="Contact information">
-        <div class="contact-row"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 2h16v20H4V2Zm4 4v2h2V6H8Zm6 0v2h2V6h-2ZM8 11v2h2v-2H8Zm6 0v2h2v-2h-2Zm-6 5v2h2v-2H8Zm6 0v4h2v-4h-2Z" fill="currentColor"/></svg></span><span>Room 507, School of Geospatial Artificial Intelligence</span></div>
-        <div class="contact-row"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 23S4.5 15.5 4.5 9a7.5 7.5 0 1 1 15 0C19.5 15.5 12 23 12 23Zm0-10.5A3.5 3.5 0 1 0 12 5a3.5 3.5 0 0 0 0 7.5Z" fill="currentColor"/></svg></span><span>No. 2, Lane 33, Yangqi Road, Xuhui District, Shanghai (上海市徐汇区扬启路33弄2号)</span></div>
-        <div class="contact-row"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h18a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm9 9 9-6H3l9 6Z" fill="currentColor"/></svg></span><span class="email-address">hliu at geoai.ecnu.edu.cn</span></div>
+        <div class="contact-row"><span class="contact-symbol" aria-hidden="true">▣</span><span>Room 507, School of Geospatial Artificial Intelligence</span></div>
+        <div class="contact-row"><span class="contact-symbol" aria-hidden="true">●</span><span>No. 2, Lane 33, Yangqi Road, Xuhui District, Shanghai (上海市徐汇区扬启路33弄2号)</span></div>
+        <div class="contact-row"><span class="contact-symbol" aria-hidden="true">✉</span><span class="email-address">hliu at geoai.ecnu.edu.cn</span></div>
       </div>
 
       <div class="icon-links" aria-label="Academic and contact links">
-        <a href="https://scholar.google.com/citations?hl=en&amp;user=CEEtEnoAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 8l4 2.18V16l7 4 7-4v-5.82L21 9.09V17h2V8L12 2Zm0 11.74L5.95 10.5 12 7.2l6.05 3.3L12 13.74Z"/></svg></a>
-        <a href="https://faculty.ecnu.edu.cn/_s52/lh2_en/main.psp" target="_blank" rel="noopener" aria-label="ECNU faculty profile" title="ECNU Profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 7v2h22V7L12 2ZM4 11v7H2v3h20v-3h-2v-7h-3v7h-3v-7h-4v7H7v-7H4Z"/></svg></a>
-        <a href="https://github.com/hao-liu-china" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.24c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.7.82.58A12 12 0 0 0 12 .7Z"/></svg></a>
-        <a href="https://orcid.org/0000-0001-5955-1577" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><span class="orcid-mark" aria-hidden="true">iD</span></a>
-        <a href="mailto:hliu@geoai.ecnu.edu.cn" aria-label="Email Hao Liu" title="Email">✉</a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=CEEtEnoAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://faculty.ecnu.edu.cn/_s52/lh2_en/main.psp" target="_blank" rel="noopener">ECNU Profile</a>
+        <a href="https://github.com/hao-liu-china" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://orcid.org/0000-0001-5955-1577" target="_blank" rel="noopener">ORCID</a>
+        <a href="mailto:hliu@geoai.ecnu.edu.cn">Email</a>
       </div>
 
       <div class="bio">
-        <p>I am a Research Professor (Zijiang Young Scholar) and Ph.D. Supervisor at the School of Geospatial Artificial Intelligence, East China Normal University (ECNU). My research interests lie in <strong>spatial intelligence, 3D vision, point cloud processing</strong>. The overarching goal of my research is to enable machines to reliably perceive, understand, and reconstruct complex 3D environments. Before that, I was a Postdoctoral Research Fellow at College of Computing and Data Science, Nanyang Technological University, working with <a href="https://personal.ntu.edu.sg/yhe/" target="_blank" rel="noopener">Prof. Ying He</a>. I received my Ph.D. from Sun Yat-sen University in 2023, supervised by <a href="https://www.yulanguo.cn/" target="_blank" rel="noopener">Prof. Yulan Guo</a>.</p>
-        <p>In 2025, I was selected for the Shanghai Overseas High-Level Talent Program (<strong>上海市海外高层次人才计划</strong>) and Ministry of Education's Overseas Postdoctoral Talent Introduction Program (<strong>教育部博士后海外引才专项</strong>).</p>
+        <p>I am a Research Professor (Zijiang Young Scholar) and Ph.D. Supervisor at the School of Geospatial Artificial Intelligence, East China Normal University (ECNU). My research interests lie in <strong>spatial intelligence, 3D vision, and point cloud processing</strong>. The overarching goal of my research is to enable machines to reliably perceive, understand, and reconstruct complex 3D environments. Before that, I was a Postdoctoral Research Fellow at the College of Computing and Data Science, Nanyang Technological University, working with <a href="https://personal.ntu.edu.sg/yhe/" target="_blank" rel="noopener">Prof. Ying He</a>. I received my Ph.D. from Sun Yat-sen University in 2023, supervised by <a href="https://www.yulanguo.cn/" target="_blank" rel="noopener">Prof. Yulan Guo</a>.</p>
+        <p>In 2025, I was selected for the Shanghai Overseas High-Level Talent Program (<strong>上海市海外高层次人才计划</strong>) and the Ministry of Education's Overseas Postdoctoral Talent Introduction Program (<strong>教育部博士后海外引才专项</strong>).</p>
       </div>
 
       <div class="opening">
         <span class="opening-label">OPENINGS</span>
-        <p><strong>Ph.D. / Master / RA / Postdoc </strong> — I am always looking for self-motivated students, research interns, and researchers to work on 3D vision and spatial intelligence, covering topics such as multi-agent collaborative 3D detection, 3D scene reconstruction and generation.</p>
-        <p>If interested, send me your resume.</p>
+        <p><strong>Ph.D. / Master / RA / Postdoc</strong> — I am always looking for self-motivated students, research interns, and researchers to work on 3D vision and spatial intelligence, covering topics such as multi-agent collaborative 3D detection, 3D scene reconstruction, and generation.</p>
+        <p>If interested, please send me your resume.</p>
       </div>
     </section>
 
@@ -544,10 +412,10 @@
       <ul class="news-list">
         <li><time datetime="2026-08">Aug 2026</time><p>My project has been funded by the National Natural Science Foundation of China (<strong>国家自然科学基金青年科学基金项目C类</strong>).</p></li>
         <li><time datetime="2026-07">Jul 2026</time><p>My English-taught graduate program for international students has been approved by East China Normal University (华东师范大学留学研究生英文项目).</p></li>
-        <li><time datetime="2026-06">June 2026</time><p>One paper was accepted to <strong>Science China Information Science (CCF A)</strong>.</p></li>
+        <li><time datetime="2026-06">Jun 2026</time><p>One paper was accepted to <strong>Science China Information Sciences (CCF A)</strong>.</p></li>
         <li><time datetime="2026-05">May 2026</time><p>Our paper <em>Radial Scaling Voxelization for Accurate Small Object 3D Detection</em> was accepted to <strong>ICML 2026</strong>.</p></li>
         <li><time datetime="2026-01">Jan 2026</time><p>Our monograph <em>Point Cloud Intelligence</em> was published.</p></li>
-        <li><time datetime="2025-12">Dec 2025</time><p>I was selected for the Ministry of Education’s Postdoctoral Overseas Talent Recruitment Program (<strong>教育部博士后海外引才专项</strong>).</p></li>
+        <li><time datetime="2025-12">Dec 2025</time><p>I was selected for the Ministry of Education's Overseas Postdoctoral Talent Introduction Program (<strong>教育部博士后海外引才专项</strong>).</p></li>
         <li><time datetime="2025-12">Dec 2025</time><p>My project was approved for funding under the Shanghai Magnolia Talent Program Pujiang Project (<strong>上海市白玉兰人才计划浦江项目</strong>).</p></li>
         <li><time datetime="2025-11">Nov 2025</time><p>I was selected for the Shanghai Overseas High-Level Talent Program (<strong>上海市海外高层次人才计划</strong>).</p></li>
         <li><time datetime="2025-11">Nov 2025</time><p>Our paper <em>Edge-Centric Relational Reasoning for 3D Scene Graph Prediction</em> was accepted to <strong>AAAI 2026</strong>.</p></li>
@@ -563,30 +431,29 @@
       <button class="text-toggle" id="news-toggle" type="button" aria-expanded="false">▽ SHOW MORE</button>
     </section>
 
-    <section class="section funding-section" id="funding" aria-labelledby="funding-title">
+    <section class="section" id="funding" aria-labelledby="funding-title">
       <h2 class="section-heading" id="funding-title">Research Funding</h2>
       <p class="funding-intro">I gratefully acknowledge the following organizations and programs for supporting my research.</p>
-
       <h3 class="funding-subheading">在研</h3>
       <ul class="funding-list">
-        <li><strong>国家自然科学基金青年科学基金项目（C类）</strong>, <span class="funding-meta">2027.01--2029.12</span>, <span class="funding-role">项目负责人</span></li>
-        <li><strong>华东师范大学留学研究生英文项目</strong>, <span class="funding-meta">2026.07--2030.07</span>, <span class="funding-role">项目负责人</span></li>
-        <li><strong>上海市白玉兰人才计划浦江项目</strong>, <span class="funding-meta">2025.12--2027.11</span>, <span class="funding-role">项目负责人</span></li>
+        <li><strong>国家自然科学基金青年科学基金项目（C类）</strong>, <span class="funding-meta">2027.01–2029.12</span>, <span class="funding-role">项目负责人</span></li>
+        <li><strong>华东师范大学留学研究生英文项目</strong>, <span class="funding-meta">2026.07–2030.07</span>, <span class="funding-role">项目负责人</span></li>
+        <li><strong>上海市白玉兰人才计划浦江项目</strong>, <span class="funding-meta">2025.12–2027.11</span>, <span class="funding-role">项目负责人</span></li>
       </ul>
       <h3 class="funding-subheading">结题</h3>
       <ul class="funding-list">
-        <li><strong>国家自然科学基金联合重点项目</strong>, <span class="funding-meta">2021.01--2024.12</span>, <span class="funding-role">项目骨干</span></li>
+        <li><strong>国家自然科学基金联合重点项目</strong>, <span class="funding-meta">2021.01–2024.12</span>, <span class="funding-role">项目骨干</span></li>
       </ul>
     </section>
-    
-<section id="publications" aria-labelledby="publications-title">
+
+    <section class="section" id="publications" aria-labelledby="publications-title">
       <h2 class="section-heading" id="publications-title">Publications</h2>
 
       <div class="publication-years">
         <details class="year-group">
           <summary class="year-summary">
             <span class="year-bar">All Publications</span>
-            <span class="TPAMI ×1, TIP ×1, TMM ×3, TITS ×1, TCSVT ×3, TGRS ×1, TIM ×2, ICML ×1, AAAI ×1, ECCV ×1, WACV ×2, ICPR ×1, Monograph ×1</span>
+            <span class="year-meta">View all 19 publications — TPAMI ×1, TIP ×1, TMM ×3, TITS ×1, TCSVT ×3, TGRS ×1, TIM ×2, ICML ×1, AAAI ×1, ECCV ×1, WACV ×2, ICPR ×1, Monograph ×1</span>
           </summary>
           <div class="year-papers">
             <article class="paper-item">
@@ -752,18 +619,18 @@
       <h2 class="section-heading" id="service-title">Service</h2>
       <ul class="service-list">
         <li>
-          <span class="service-category">Conference reviewer/Program committee:</span>
+          <span class="service-category">Conference Reviewer / Program Committee:</span>
           <ul>
             <li>International Conference on Machine Learning (ICML)</li>
-            <li>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</li>
-            <li>IEEE International Conference on Computer Vision (ICCV)</li>
+            <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
+            <li>IEEE/CVF International Conference on Computer Vision (ICCV)</li>
             <li>European Conference on Computer Vision (ECCV)</li>
-            <li>Association for the Advancement of Artificial Intelligence (AAAI)</li>
+            <li>AAAI Conference on Artificial Intelligence (AAAI)</li>
             <li>...</li>
           </ul>
         </li>
         <li>
-          <span class="service-category">Journal reviewer:</span>
+          <span class="service-category">Journal Reviewer:</span>
           <ul>
             <li>IEEE Transactions on Visualization and Computer Graphics (TVCG)</li>
             <li>IEEE Transactions on Multimedia (TMM)</li>
@@ -776,7 +643,7 @@
     </section>
 
     <footer>
-      <p>© <span id="year">2026</span> Hao Liu. Last updated August 2026.</p>
+      <p>© <span id="year">2026</span> Hao Liu. Last updated September 2026.</p>
     </footer>
   </main>
 
@@ -816,7 +683,6 @@
     window.addEventListener('scroll', syncActiveNav, { passive: true });
     window.addEventListener('resize', syncActiveNav);
     syncActiveNav();
-
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
